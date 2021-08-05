@@ -1,0 +1,31 @@
+.wrapper {
+  position: relative;
+  z-index: 0;
+  width: 100vw;
+  height: 80vh;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.logoWrapper {
+  position: absolute;
+  top: 40%;
+  left: 40px;
+}
+
+.logo {
+  width: 500px;
+}
+
+.subtitle {
+  margin-top: 20px;
+  font-family: "Crimson Pro", serif;
+  font-weight: 300;
+  font-size: 18px;
+  color: white;
+}

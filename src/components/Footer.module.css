@@ -1,0 +1,27 @@
+.wrapper {
+  background-color: #edeaee;
+  height: 300px;
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+}
+
+.links {
+  font-weight: 500;
+}
+
+.links p {
+  padding-left: 40px;
+  margin-top: 40px;
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.copyright p {
+  margin-bottom: 10px;
+  font-size: 0.75rem;
+}
