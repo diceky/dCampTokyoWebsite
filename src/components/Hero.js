@@ -21,6 +21,8 @@ const Hero = () => {
             className={Styles.image}
             loading="eager"
             placeholder="blurred"
+            objectFit="cover"
+            objectPosition="50% bottom"
           />
           <div className={Styles.logoWrapper}>
             <StaticImage

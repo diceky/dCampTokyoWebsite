@@ -8,10 +8,10 @@
 
 .links {
   font-weight: 500;
+  padding-left: 40px;
 }
 
 .links p {
-  padding-left: 40px;
   margin-top: 40px;
 }
 
@@ -24,4 +24,11 @@
 .copyright p {
   margin-bottom: 10px;
   font-size: 0.75rem;
+}
+
+.icon {
+  margin-top: 40px;
+  background-color: white;
+  border-radius: 25px;
+  padding: 10px;
 }

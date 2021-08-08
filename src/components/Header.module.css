@@ -1,7 +1,7 @@
 .wrapper {
   position: fixed;
   top: 30px;
-  z-index: 1;
+  z-index: 2;
   width: 100vw;
   color: white;
 }
@@ -18,10 +18,40 @@
 }
 
 .item {
+  text-decoration: none;
+  color: white;
   width: 200px;
   text-align: center;
   font-weight: 500;
   margin: 0 auto;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  padding: 0.2em 0;
+  overflow: hidden;
+}
+
+.item:hover {
+  color: white;
+}
+
+.item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transition: transform 300ms;
+  opacity: 1;
+  transform: scale(0);
+  transform-origin: center;
+}
+
+.item:hover::after,
+.item:focus::after {
+  transform: scale(0.5);
 }
 
 .button {
@@ -34,12 +64,49 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 2px 2px #ad6101;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.button:hover::after,
+.button:focus::after {
+  transform: scale(0);
+}
+
+.button:hover {
+  box-shadow: 4px 4px #ad6101;
 }
 
 .selectLang {
   text-decoration: none;
   color: white;
   font-weight: 300;
+  position: relative;
+  padding: 0.2em 0;
+  overflow: hidden;
+}
+
+.selectLang:hover {
+  color: white;
+}
+
+.selectLang::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  transition: transform 300ms;
+  opacity: 1;
+  transform: scale(0);
+  transform-origin: center;
+}
+
+.selectLang:hover::after,
+.selectLang:focus::after {
+  transform: scale(1);
 }
 
 .currentLang {

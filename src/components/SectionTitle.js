@@ -22,11 +22,12 @@ const SectionTitle = ({ text }) => {
           src="../images/sectionTitle.png"
           alt="section title"
           className={Styles.image}
+          objectFit="contain"
           loading="eager"
           placeholder="blurred"
         />
       )}
-      <span>{text}</span>
+      <span className={Styles.text}>{text}</span>
     </div>
   );
 };

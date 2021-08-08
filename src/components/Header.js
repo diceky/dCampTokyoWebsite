@@ -3,6 +3,7 @@ import * as Styles from "./Header.module.css";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { Link } from "gatsby";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 const Header = ({ lang, url }) => {
   return (
@@ -41,14 +42,30 @@ const Header = ({ lang, url }) => {
         lg={{ span: 8, offset: 2 }}
         className={Styles.menu}
       >
-        <p className={Styles.item}>
-          {lang === "ja" ? "d.campについて" : "About d.camp"}
-        </p>
-        <p className={Styles.item}>{lang === "ja" ? "開催概要" : "Details"}</p>
-        <p className={Styles.item}>
+        <AnchorLink
+          to={lang === "ja" ? "/ja/#about" : "/en/#about"}
+          className={Styles.item}
+        >
+          {lang === "ja" ? "d.campとは？" : "About d.camp"}
+        </AnchorLink>
+        <AnchorLink
+          to={lang === "ja" ? "/ja/#details" : "/en/#details"}
+          className={Styles.item}
+        >
+          {lang === "ja" ? "開催概要" : "Details"}
+        </AnchorLink>
+        <AnchorLink
+          to={lang === "ja" ? "/ja/#howtojoin" : "/en/#howtojoin"}
+          className={Styles.item}
+        >
           {lang === "ja" ? "参加方法" : "How To Join"}
-        </p>
-        <p className={Styles.item}>{lang === "ja" ? "よくある質問" : "FAQ"}</p>
+        </AnchorLink>
+        <AnchorLink
+          to={lang === "ja" ? "/ja/#faq" : "/en/#faq"}
+          className={Styles.item}
+        >
+          {lang === "ja" ? "よくある質問" : "FAQ"}
+        </AnchorLink>
         <p className={Styles.button}>{lang === "ja" ? "応募する" : "Apply"}</p>
       </Col>
     </Row>

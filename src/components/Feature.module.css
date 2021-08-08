@@ -1,0 +1,56 @@
+.wrapper {
+  margin-top: 80px;
+}
+
+.leftWrapper {
+}
+
+.rightWrapper {
+}
+
+.title {
+  font-family: "Crimson Pro", serif;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.description {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 150%;
+  margin-bottom: 40px;
+}
+
+.link {
+  width: 100%;
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  background-color: #88e2ff;
+  padding: 16px 32px;
+  border-radius: 75px;
+}
+
+.link:hover {
+  text-decoration: underline white 2px;
+  color: white;
+}
+
+.icon {
+  margin-left: 10px;
+}
+
+.image {
+  height: 100%;
+  width: auto;
+  top: 0;
+  left: 0;
+}
+
+.backdrop {
+  height: 100%;
+  width: auto;
+  top: 15px;
+  left: 15px;
+}

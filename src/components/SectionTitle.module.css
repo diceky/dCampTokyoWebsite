@@ -1,0 +1,17 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.image {
+  width: 100px;
+  height: auto;
+}
+
+.text {
+  font-family: "Crimson Pro", serif;
+  font-size: 36px;
+  font-weight: 700;
+  margin-left: 30px;
+}

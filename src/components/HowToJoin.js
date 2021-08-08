@@ -4,7 +4,7 @@ import SectionTitle from "./SectionTitle";
 
 const HowToJoin = ({ lang }) => {
   return (
-    <div className={Styles.wrapper}>
+    <div className={Styles.wrapper} id="howtojoin">
       <SectionTitle text={lang === "ja" ? "参加方法" : "How To Join"} />
       <div>This is HowToJoin</div>
     </div>
