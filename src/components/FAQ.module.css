@@ -52,6 +52,15 @@
   margin-right: 0;
 }
 
+.inlineLink {
+  color: black;
+  text-decoration: underline black 1px;
+}
+
+.inlineLink:hover {
+  color: black;
+}
+
 /**************
 Responsive
 **************/

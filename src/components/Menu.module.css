@@ -1,0 +1,48 @@
+.wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 60vw;
+  background-color: #88e2ff;
+  color: white;
+  z-index: 1;
+  transition: all 0.4s ease-in;
+  display: flex;
+  flex-direction: column;
+  padding: 160px 20px;
+}
+
+.wrapperClosed {
+  composes: wrapper;
+  right: -100%;
+  transition: all 0.4s ease-in;
+}
+
+.item {
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+.image {
+  position: absolute;
+  width: 140px;
+  bottom: 50px;
+}
+
+.langWrapper {
+  font-size: 24px;
+}
+
+.currentLang {
+  font-weight: 700;
+}
+
+.selectLang {
+  text-decoration: none;
+  color: white;
+  font-weight: 300;
+}

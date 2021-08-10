@@ -18,7 +18,7 @@
   margin-bottom: 0px;
 }
 
-.explanation {
+.content {
   font-size: 24px;
   font-weight: 400;
 }
@@ -27,7 +27,7 @@
   position: absolute;
   bottom: 0;
   right: 90px;
-  width: 200px;
+  width: 150px;
 }
 
 /**************
@@ -47,7 +47,7 @@ Responsive
     margin-bottom: 0px;
   }
 
-  .explanation {
+  .content {
     font-size: 18px;
     font-weight: 400;
   }

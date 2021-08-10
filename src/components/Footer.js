@@ -3,6 +3,7 @@ import * as Styles from "./Footer.module.css";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { Facebook, Instagram } from "react-feather";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 const Footer = ({ lang }) => {
   return (
@@ -15,8 +16,10 @@ const Footer = ({ lang }) => {
           lg={{ span: 6, offset: 0 }}
           className={Styles.links}
         >
-          <p>Top</p>
-          <p>{lang === "ja" ? "IDEO Tokyoについて" : "About IDEO Tokyo"}</p>
+          <AnchorLink to={lang === "ja" ? "/ja/" : "/en/"}>Top</AnchorLink>
+          <a href="https://jp.ideo.com/" target="_blank" rel="noreferrer">
+            {lang === "ja" ? "IDEO Tokyoについて" : "About IDEO Tokyo"}
+          </a>
           <Facebook color="black" size={24} className={Styles.icon} />
           <Instagram color="black" size={24} className={Styles.icon} />
         </Col>

@@ -4,6 +4,7 @@
   width: 100vw;
   position: absolute;
   bottom: 0;
+  margin: 0;
 }
 
 .links {
@@ -11,8 +12,11 @@
   padding-left: 40px;
 }
 
-.links p {
+.links a {
+  display: block;
   margin-top: 40px;
+  color: black;
+  text-decoration: none;
 }
 
 .copyright {

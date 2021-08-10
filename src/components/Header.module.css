@@ -58,7 +58,7 @@
   font-weight: 700;
   width: 100px;
   height: 30px;
-  margin: 0 0 0 50px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -111,6 +111,56 @@
   font-weight: 700;
 }
 
+.menuBtn {
+  background: none;
+  border: none;
+  outline: none;
+  transition: all 0.4s ease-in;
+}
+
+.menuBtnTopOpen {
+  transform: translateY(0%);
+  transition: all 0.4s ease-in;
+}
+
+.menuBtnTopClose {
+  transform: translateY(30%);
+  transition: all 0.4s ease-in;
+}
+
+.menuBtnBottomOpen {
+  transform: translateY(0%);
+  transition: all 0.4s ease-in;
+}
+
+.menuBtnBottomClose {
+  transform: translateY(-30%);
+  transition: all 0.4s ease-in;
+}
+
+.cta {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+  height: 90px;
+  width: 90px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #ff8e00;
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  box-shadow: 3px 3px #ad6101;
+}
+
+.cta:hover,
+.cta:active {
+  color: white;
+}
+
 /**************
 Responsive
 **************/
@@ -120,8 +170,14 @@ Responsive
 
 @media screen and (min-width: 576px) and (max-width: 768px) {
   /*　Bootstrap sm 　*/
+  .item {
+    margin: 0 auto;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
   /*　Bootstrap md 　*/
+  .item {
+    margin: 0 auto;
+  }
 }

@@ -147,4 +147,21 @@ Responsive
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
   /*　Bootstrap md 　*/
+  .link {
+    font-size: 14px;
+    padding: 16px;
+  }
+  .wrapper {
+    margin-top: 100px;
+    min-height: 50vh;
+    max-height: 50vh;
+  }
+  .image {
+    width: 90%;
+    min-height: 50vh;
+    max-height: 50vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
