@@ -1,0 +1,68 @@
+.wrapper {
+  padding-bottom: 180px;
+  position: relative;
+}
+
+.image {
+  height: 100%;
+  width: auto;
+}
+
+.item {
+  margin: 20px 10px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 0px;
+}
+
+.explanation {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.woodblock {
+  position: absolute;
+  bottom: 0;
+  right: 90px;
+  width: 200px;
+}
+
+/**************
+Responsive
+**************/
+@media screen and (max-width: 576px) {
+  /*　Bootstrap xs */
+  .wrapper {
+    padding-bottom: 120px;
+  }
+  .item {
+    margin: 20px auto;
+    padding-right: 20px;
+  }
+  .title {
+    font-size: 14px;
+    margin-bottom: 0px;
+  }
+
+  .explanation {
+    font-size: 18px;
+    font-weight: 400;
+  }
+  .woodblock {
+    position: absolute;
+    bottom: 0;
+    right: -15px;
+    width: 150px;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  /*　Bootstrap sm 　*/
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  /*　Bootstrap md 　*/
+}

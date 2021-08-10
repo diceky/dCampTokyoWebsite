@@ -14,23 +14,63 @@ const About = ({ lang }) => {
   const data = useStaticQuery(
     graphql`
       {
-        en: allContentfulAbout(filter: { node_locale: { eq: "en-US" } }) {
+        ja: allContentfulSectionAbout(filter: { node_locale: { eq: "ja" } }) {
           nodes {
             title {
               raw
             }
             description {
               raw
+            }
+            timetable {
+              time
+              event {
+                raw
+              }
+            }
+            features {
+              buttonLink
+              buttonText
+              image {
+                title
+                description
+                gatsbyImageData
+              }
+              title
+              description {
+                raw
+              }
             }
           }
         }
-        ja: allContentfulAbout(filter: { node_locale: { eq: "ja" } }) {
+        en: allContentfulSectionAbout(
+          filter: { node_locale: { eq: "en-US" } }
+        ) {
           nodes {
             title {
               raw
             }
             description {
               raw
+            }
+            timetable {
+              time
+              event {
+                raw
+              }
+            }
+            features {
+              buttonLink
+              buttonText
+              image {
+                title
+                description
+                gatsbyImageData
+              }
+              title
+              description {
+                raw
+              }
             }
           }
         }
@@ -83,6 +123,7 @@ const About = ({ lang }) => {
             src="../images/stripeBlue.png"
             alt="blue stripe"
             className={Styles.stripe}
+            objectFit="contain"
             loading="eager"
             placeholder="blurred"
           />
@@ -104,6 +145,7 @@ const About = ({ lang }) => {
             src="../images/stripeBlue.png"
             alt="blue stripe"
             className={Styles.stripeFlipped}
+            objectFit="contain"
             loading="eager"
             placeholder="blurred"
           />
@@ -126,21 +168,39 @@ const About = ({ lang }) => {
           loading="eager"
           placeholder="blurred"
         />
-        <Feature
-          title="世界で活躍するデザイナーから直接学ぶ。"
-          description="IDEOは、世界的デザインファームでありながら、実は教育にとても熱い想いを持つ組織です。それは、IDEOの全員が、デザインが持つスーパーパワーを信じ、伝えたいと思っているから。"
-          link="https://jp.ideo.com/blog/ideotokyo-dcamp-post"
-          linkText="IDEOが中高生にデザインの力を伝えたい理由"
-          image="feature1.png"
-        />
-        <Feature
-          title="世界で活躍するデザイナーから直接学ぶ。"
-          description="IDEOは、世界的デザインファームでありながら、実は教育にとても熱い想いを持つ組織です。それは、IDEOの全員が、デザインが持つスーパーパワーを信じ、伝えたいと思っているから。"
-          link="https://jp.ideo.com/blog/ideotokyo-dcamp-post"
-          linkText="IDEOが中高生にデザインの力を伝えたい理由"
-          image="feature1.png"
-          flipped
-        />
+        {lang === "ja"
+          ? data.ja.nodes[0].features.map(
+              (
+                { title, description, buttonText, buttonLink, image },
+                index
+              ) => (
+                <Feature
+                  key={index}
+                  index={index}
+                  title={title}
+                  description={description}
+                  linkText={buttonText}
+                  link={buttonLink}
+                  image={image}
+                />
+              )
+            )
+          : data.en.nodes[0].features.map(
+              (
+                { title, description, buttonText, buttonLink, image },
+                index
+              ) => (
+                <Feature
+                  key={index}
+                  index={index}
+                  title={title}
+                  description={description}
+                  linkText={buttonText}
+                  link={buttonLink}
+                  image={image}
+                />
+              )
+            )}
         <StaticImage
           src="../images/stripeOrange.png"
           alt="orange stripe"
@@ -149,15 +209,14 @@ const About = ({ lang }) => {
           loading="eager"
           placeholder="blurred"
         />
-        <Feature
-          title="世界で活躍するデザイナーから直接学ぶ。"
-          description="IDEOは、世界的デザインファームでありながら、実は教育にとても熱い想いを持つ組織です。それは、IDEOの全員が、デザインが持つスーパーパワーを信じ、伝えたいと思っているから。"
-          link="https://jp.ideo.com/blog/ideotokyo-dcamp-post"
-          linkText="IDEOが中高生にデザインの力を伝えたい理由"
-          image="feature1.png"
-        />
       </div>
-      <Timetable />
+      <Timetable
+        data={
+          lang === "ja"
+            ? data.ja.nodes[0].timetable
+            : data.en.nodes[0].timetable
+        }
+      />
     </div>
   );
 };

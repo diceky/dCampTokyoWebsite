@@ -2,7 +2,7 @@
   position: relative;
   z-index: 0;
   width: 100vw;
-  height: 80vh;
+  height: 95vh;
 }
 
 .image {
@@ -28,4 +28,29 @@
   font-weight: 300;
   font-size: 18px;
   color: white;
+}
+
+/**************
+Responsive
+**************/
+@media screen and (max-width: 576px) {
+  /*　Bootstrap xs */
+  .logoWrapper {
+    left: 20px;
+  }
+
+  .logo {
+    width: 300px;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  /*　Bootstrap sm 　*/
+  .logo {
+    width: 400px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  /*　Bootstrap md 　*/
 }

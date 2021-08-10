@@ -20,14 +20,12 @@
 .item {
   text-decoration: none;
   color: white;
-  width: 200px;
   text-align: center;
   font-weight: 500;
   margin: 0 auto;
   cursor: pointer;
   display: block;
   position: relative;
-  padding: 0.2em 0;
   overflow: hidden;
 }
 
@@ -51,7 +49,7 @@
 
 .item:hover::after,
 .item:focus::after {
-  transform: scale(0.5);
+  transform: scale(1);
 }
 
 .button {
@@ -111,4 +109,19 @@
 
 .currentLang {
   font-weight: 700;
+}
+
+/**************
+Responsive
+**************/
+@media screen and (max-width: 576px) {
+  /*　Bootstrap xs */
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  /*　Bootstrap sm 　*/
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  /*　Bootstrap md 　*/
 }
