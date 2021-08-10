@@ -16,12 +16,36 @@ const Footer = ({ lang }) => {
           lg={{ span: 6, offset: 0 }}
           className={Styles.links}
         >
-          <AnchorLink to={lang === "ja" ? "/ja/" : "/en/"}>Top</AnchorLink>
-          <a href="https://jp.ideo.com/" target="_blank" rel="noreferrer">
+          <AnchorLink
+            to={lang === "ja" ? "/ja/" : "/en/"}
+            className={Styles.link}
+          >
+            Top
+          </AnchorLink>
+          <a
+            href="https://jp.ideo.com/"
+            target="_blank"
+            rel="noreferrer"
+            className={Styles.link}
+          >
             {lang === "ja" ? "IDEO Tokyoについて" : "About IDEO Tokyo"}
           </a>
-          <Facebook color="black" size={24} className={Styles.icon} />
-          <Instagram color="black" size={24} className={Styles.icon} />
+          <a
+            href="https://www.facebook.com/ideotokyo/"
+            target="_blank"
+            rel="noreferrer"
+            className={Styles.icon}
+          >
+            <Instagram color="black" size={24} />
+          </a>
+          <a
+            href="https://www.instagram.com/ideotokyo/"
+            target="_blank"
+            rel="noreferrer"
+            className={Styles.icon}
+          >
+            <Facebook color="black" size={24} />
+          </a>
         </Col>
       </Row>
       <Row>
