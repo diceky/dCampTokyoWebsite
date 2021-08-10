@@ -5,13 +5,13 @@ import Footer from "../components/Footer";
 import * as Styles from "./Layout.module.css";
 import { useStaticQuery, graphql } from "gatsby";
 
-import { getCurrentLangKey, getLangs, getUrlForLang } from "ptz-i18n";
-import { IntlProvider, addLocaleData } from "react-intl";
+import { getCurrentLangKey } from "ptz-i18n";
+import { IntlProvider } from "react-intl";
 import "intl";
 
 export const IEContext = React.createContext("");
 
-const Layout = ({ children, lang, location }) => {
+const Layout = ({ children, lang, location, changeColor }) => {
   const data = useStaticQuery(
     graphql`
       query {
@@ -39,14 +39,12 @@ const Layout = ({ children, lang, location }) => {
   const url = location.pathname;
   const { langs, defaultLangKey } = data.site.siteMetadata.languages;
   const langKey = getCurrentLangKey(langs, defaultLangKey, url);
-  //const homeLink = `/${langKey}/`.replace(`/${defaultLangKey}/`, "/");
-  //const langsMenu = getLangs(langs, langKey, getUrlForLang(homeLink, url));
 
   return (
     <IntlProvider locale={langKey}>
       <IEContext.Provider value={isIE}>
         <Container fluid className={Styles.wrapper}>
-          <Header lang={langKey} url={url} />
+          <Header lang={langKey} changeColor={changeColor} />
           {children}
           <Footer lang={langKey} />
         </Container>

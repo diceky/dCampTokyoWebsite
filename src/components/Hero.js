@@ -1,14 +1,26 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import * as Styles from "./Hero.module.css";
 import { StaticImage } from "gatsby-plugin-image";
 import { IEContext } from "./Layout";
 import HeroImage from "../images/hero.png";
 
-const Hero = () => {
+const Hero = ({ setHeight }) => {
   const isIE = useContext(IEContext);
 
+  const wrapperRef = useRef();
+  useEffect(() => {
+    if (wrapperRef.current) {
+      setHeight(wrapperRef.current.getBoundingClientRect().height);
+    }
+    window.addEventListener("resize", () => {
+      if (wrapperRef.current) {
+        setHeight(wrapperRef.current.getBoundingClientRect().height);
+      }
+    });
+  }, [setHeight]);
+
   return (
-    <div className={Styles.wrapper}>
+    <div className={Styles.wrapper} ref={wrapperRef}>
       {isIE ? (
         <>
           <img src={HeroImage} alt="hero.png" className={Styles.image} />

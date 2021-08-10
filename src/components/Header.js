@@ -8,7 +8,7 @@ import Menu from "./Menu";
 
 import { useWindowDimensions } from "../misc/customHooks";
 
-const Header = ({ lang, url }) => {
+const Header = ({ lang, url, changeColor }) => {
   const { width, height } = useWindowDimensions();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -28,19 +28,41 @@ const Header = ({ lang, url }) => {
             <div>
               {lang === "ja" ? (
                 <>
-                  <span className={Styles.currentLang}>JP</span>
-                  <span> / </span>
-                  <Link to="/en/" className={Styles.selectLang}>
+                  <span
+                    className={
+                      changeColor ? Styles.currentLangGrey : Styles.currentLang
+                    }
+                  >
+                    JP
+                  </span>
+                  <span className={changeColor ? Styles.grey : ""}> / </span>
+                  <Link
+                    to="/en/"
+                    className={
+                      changeColor ? Styles.selectLangGrey : Styles.selectLang
+                    }
+                  >
                     EN
                   </Link>
                 </>
               ) : (
                 <>
-                  <Link to="/ja/" className={Styles.selectLang}>
+                  <Link
+                    to="/ja/"
+                    className={
+                      changeColor ? Styles.selectLangGrey : Styles.selectLang
+                    }
+                  >
                     JP
                   </Link>
-                  <span> / </span>
-                  <span className={Styles.currentLang}>EN</span>
+                  <span className={changeColor ? Styles.grey : ""}> / </span>
+                  <span
+                    className={
+                      changeColor ? Styles.currentLangGrey : Styles.currentLang
+                    }
+                  >
+                    EN
+                  </span>
                 </>
               )}
             </div>
@@ -54,25 +76,25 @@ const Header = ({ lang, url }) => {
           >
             <AnchorLink
               to={lang === "ja" ? "/ja/#about" : "/en/#about"}
-              className={Styles.item}
+              className={changeColor ? Styles.itemGrey : Styles.item}
             >
               {lang === "ja" ? "d.campとは？" : "About d.camp"}
             </AnchorLink>
             <AnchorLink
               to={lang === "ja" ? "/ja/#details" : "/en/#details"}
-              className={Styles.item}
+              className={changeColor ? Styles.itemGrey : Styles.item}
             >
               {lang === "ja" ? "開催概要" : "Details"}
             </AnchorLink>
             <AnchorLink
               to={lang === "ja" ? "/ja/#howtojoin" : "/en/#howtojoin"}
-              className={Styles.item}
+              className={changeColor ? Styles.itemGrey : Styles.item}
             >
               {lang === "ja" ? "参加方法" : "How To Join"}
             </AnchorLink>
             <AnchorLink
               to={lang === "ja" ? "/ja/#faq" : "/en/#faq"}
-              className={Styles.item}
+              className={changeColor ? Styles.itemGrey : Styles.item}
             >
               {lang === "ja" ? "よくある質問" : "FAQ"}
             </AnchorLink>

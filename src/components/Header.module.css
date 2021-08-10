@@ -29,8 +29,17 @@
   overflow: hidden;
 }
 
+.itemGrey {
+  composes: item;
+  color: #89898a;
+}
+
 .item:hover {
   color: white;
+}
+
+.itemGrey:hover {
+  color: #89898a;
 }
 
 .item::after {
@@ -41,6 +50,20 @@
   width: 100%;
   height: 2px;
   background-color: white;
+  transition: transform 300ms;
+  opacity: 1;
+  transform: scale(0);
+  transform-origin: center;
+}
+
+.itemGrey::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #89898a;
   transition: transform 300ms;
   opacity: 1;
   transform: scale(0);
@@ -84,8 +107,17 @@
   overflow: hidden;
 }
 
+.selectLangGrey {
+  composes: selectLang;
+  color: #89898a;
+}
+
 .selectLang:hover {
   color: white;
+}
+
+.selectLang:hover {
+  color: #89898a;
 }
 
 .selectLang::after {
@@ -107,8 +139,17 @@
   transform: scale(1);
 }
 
+.grey {
+  color: #89898a;
+}
+
 .currentLang {
   font-weight: 700;
+}
+
+.currentLangGrey {
+  composes: currentLang;
+  color: #89898a;
 }
 
 .menuBtn {
