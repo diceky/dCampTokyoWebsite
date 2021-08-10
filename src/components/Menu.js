@@ -4,30 +4,34 @@ import { Link } from "gatsby";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { StaticImage } from "gatsby-plugin-image";
 
-const Menu = ({ lang, isOpen }) => {
+const Menu = ({ lang, isOpen, toggleMenu }) => {
   return (
     <div className={isOpen ? Styles.wrapper : Styles.wrapperClosed}>
       <AnchorLink
         to={lang === "ja" ? "/ja/#about" : "/en/#about"}
         className={Styles.item}
+        onAnchorLinkClick={toggleMenu}
       >
         {lang === "ja" ? "d.campとは？" : "About d.camp"}
       </AnchorLink>
       <AnchorLink
         to={lang === "ja" ? "/ja/#details" : "/en/#details"}
         className={Styles.item}
+        onAnchorLinkClick={toggleMenu}
       >
         {lang === "ja" ? "開催概要" : "Details"}
       </AnchorLink>
       <AnchorLink
         to={lang === "ja" ? "/ja/#howtojoin" : "/en/#howtojoin"}
         className={Styles.item}
+        onAnchorLinkClick={toggleMenu}
       >
         {lang === "ja" ? "参加方法" : "How To Join"}
       </AnchorLink>
       <AnchorLink
         to={lang === "ja" ? "/ja/#faq" : "/en/#faq"}
         className={Styles.item}
+        onAnchorLinkClick={toggleMenu}
       >
         {lang === "ja" ? "よくある質問" : "FAQ"}
       </AnchorLink>

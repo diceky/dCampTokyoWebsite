@@ -110,7 +110,7 @@ const Header = ({ lang, url, changeColor }) => {
         </>
       ) : (
         <>
-          <Menu isOpen={isOpen} lang={lang} />
+          <Menu isOpen={isOpen} lang={lang} toggleMenu={toggleMenu} />
           <Col
             xs={{ span: 2, offset: 10 }}
             sm={{ span: 2, offset: 10 }}
@@ -131,7 +131,7 @@ const Header = ({ lang, url, changeColor }) => {
                     isOpen ? Styles.menuBtnTopClose : Styles.menuBtnTopOpen
                   }
                   d="M-3.02763e-07 6.92641L-4.69281e-08 1.07359C-2.11933e-08 0.484844 0.464622 -1.64072e-06 1.02881 -1.61606e-06L36.9712 -4.49711e-08C37.5354 -2.03094e-08 38 0.484846 38 1.07359L38 6.92641C38 7.51516 37.5354 8 36.9712 8L0.995632 8C0.431442 8 -3.28498e-07 7.51515 -3.02763e-07 6.92641Z"
-                  fill="white"
+                  fill={changeColor ? "grey" : "white"}
                 />
                 <path
                   className={
@@ -140,7 +140,7 @@ const Header = ({ lang, url, changeColor }) => {
                       : Styles.menuBtnBottomOpen
                   }
                   d="M-3.02763e-07 20.9264L-4.69281e-08 15.0736C-2.11933e-08 14.4848 0.464622 14 1.02881 14L36.9712 14C37.5354 14 38 14.4848 38 15.0736L38 20.9264C38 21.5152 37.5354 22 36.9712 22L0.995632 22C0.431442 22 -3.28498e-07 21.5152 -3.02763e-07 20.9264Z"
-                  fill="white"
+                  fill={changeColor ? "grey" : "white"}
                 />
               </svg>
             </button>
