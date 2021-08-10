@@ -49,7 +49,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`crimson pro\:300,400,700`, `work sans\:300,400,500,700`],
+        fonts: [`crimson pro\:300,300i,400,700`, `work sans\:300,400,500,700`],
         display: "swap",
       },
     },

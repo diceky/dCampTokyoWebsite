@@ -1,0 +1,124 @@
+.wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.titleWrapper {
+  position: absolute;
+  font-family: "Crimson Pro", serif;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+}
+
+.title {
+  font-size: 200px;
+  font-weight: 700;
+  margin-bottom: 0;
+  line-height: 100%;
+}
+
+.description {
+  font-size: 24px;
+  font-weight: 300;
+  margin: 0 auto;
+}
+
+.italic {
+  composes: description;
+  font-style: italic;
+}
+
+.link {
+  text-decoration: none;
+  font-family: "Work Sans", sans-serif;
+  background-color: #ff8e00;
+  font-weight: 700;
+  width: 90%;
+  height: 80px;
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 40px auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 4px 4px #ad6101;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.link:hover {
+  box-shadow: 8px 8px #ad6101;
+  color: white;
+}
+
+.foamBlue {
+  position: absolute;
+  width: 150px;
+  top: 15%;
+  left: 8%;
+  transform: rotate(20deg);
+}
+
+.foamWhite {
+  position: absolute;
+  width: 200px;
+  top: 80%;
+  left: 75%;
+  transform: rotate(20deg);
+}
+
+.foamGrey {
+  position: absolute;
+  width: 350px;
+  top: 12%;
+  left: 34%;
+}
+
+.blob {
+  position: absolute;
+  width: 150px;
+  top: 85%;
+  left: 14%;
+  transform: rotate(20deg);
+}
+
+.squares {
+  position: absolute;
+  width: 150px;
+  top: 11%;
+  left: 76%;
+}
+
+.stripeBlue {
+  position: absolute;
+  width: 300px;
+  top: 60%;
+  left: -10%;
+}
+
+.stripeOrange {
+  position: absolute;
+  width: 300px;
+  top: 63%;
+  left: 89%;
+}
+
+.wiggle {
+  position: absolute;
+  width: 200px;
+  top: 25%;
+  left: 90%;
+  transform: rotate(100deg);
+}
+
+.woodblock {
+  position: absolute;
+  width: 250px;
+  top: 85%;
+  left: 42%;
+}
