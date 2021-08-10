@@ -59,5 +59,17 @@ module.exports = {
         duration: 200,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `d.camp Tokyo`,
+        short_name: `d.camp`,
+        start_url: `/`,
+        background_color: `#FFFFFF`,
+        theme_color: `#FF8E00`,
+        display: `standalone`,
+        icon: `src/images/favicon.png`,
+      },
+    },
   ],
 };
