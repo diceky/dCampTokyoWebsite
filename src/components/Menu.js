@@ -72,8 +72,6 @@ const Menu = ({ lang, isOpen, toggleMenu }) => {
           src="../images/foamGrey.png"
           alt="grey foam"
           style={{ position: "absolute" }}
-          loading="eager"
-          placeholder="blurred"
         />
       </Reveal>
     </div>

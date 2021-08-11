@@ -14,7 +14,7 @@ import { keyframes } from "@emotion/react";
 const customAnimation = keyframes`
   from {
     opacity: 0;
-    transform: translate3d(0, 200px, 0) rotate(0);
+    transform: translate3d(0, 100px, 0) rotate(0);
   }
 
   to {
@@ -73,24 +73,30 @@ const FAQ = ({ lang }) => {
   return (
     <Row className={Styles.wrapper} id="faq">
       <SectionTitle text={lang === "ja" ? "よくある質問" : "FAQ"} />
-      <Reveal keyframes={customAnimation} triggerOnce className={Styles.blob}>
+      <Reveal
+        keyframes={customAnimation}
+        triggerOnce
+        delay={600}
+        className={Styles.blob}
+      >
         <StaticImage
           src="../images/blob.png"
           alt="orange blob"
           style={{ position: "absolute" }}
           objectFit="contain"
-          loading="eager"
-          placeholder="blurred"
         />
       </Reveal>
-      <Reveal keyframes={customAnimation} triggerOnce className={Styles.square}>
+      <Reveal
+        keyframes={customAnimation}
+        triggerOnce
+        delay={600}
+        className={Styles.square}
+      >
         <StaticImage
           src="../images/squares.png"
           alt="blue square"
           style={{ position: "absolute" }}
           objectFit="contain"
-          loading="eager"
-          placeholder="blurred"
         />
       </Reveal>
       <Col

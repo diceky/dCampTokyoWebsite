@@ -10,7 +10,7 @@ import { keyframes } from "@emotion/react";
 const customAnimation = keyframes`
   from {
     opacity: 0;
-    transform: translate3d(0, 200px, 0);
+    transform: translate3d(0, 100px, 0);
   }
 
   to {
@@ -39,8 +39,6 @@ const SectionTitle = ({ text }) => {
             alt="section title"
             className={Styles.image}
             objectFit="contain"
-            loading="eager"
-            placeholder="blurred"
           />
         )}
         <span className={Styles.text}>{text}</span>

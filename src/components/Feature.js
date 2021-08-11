@@ -7,6 +7,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 import { useWindowDimensions } from "../misc/customHooks";
 
@@ -16,7 +17,7 @@ import { keyframes } from "@emotion/react";
 const customAnimation = keyframes`
   from {
     opacity: 0;
-    transform: translate3d(0, 200px, 0) rotate(0);
+    transform: translate3d(0, 100px, 0) rotate(0);
   }
 
   to {
@@ -60,14 +61,12 @@ const Feature = ({
 
   const featureImage = (
     <>
-      <Reveal keyframes={customAnimation} triggerOnce>
+      <Reveal keyframes={customAnimation} triggerOnce delay={600}>
         <StaticImage
           src="../images/backdropBlue.png"
           alt="blue backdrop"
           className={Styles.backdrop}
           style={{ position: "absolute" }}
-          loading="eager"
-          placeholder="blurred"
           objectFit="cover"
         />
       </Reveal>
@@ -78,8 +77,6 @@ const Feature = ({
         style={
           width <= 576 ? { position: "relative" } : { position: "absolute" }
         }
-        loading="eager"
-        placeholder="blurred"
         objectFit="cover"
         objectPosition="left 50%"
       />
@@ -92,10 +89,19 @@ const Feature = ({
       <p className={Styles.description}>
         {renderRichText(description, options)}
       </p>
-      <a href={link} className={Styles.link} target="_blank" rel="noreferrer">
-        {linkText}
-        <ArrowRightCircle color="white" size={24} className={Styles.icon} />
-      </a>
+      {link.includes("#") ? (
+        <AnchorLink
+          to={lang === "ja" ? `/ja/${link}` : `/en/${link}`}
+          className={Styles.link}
+        >
+          {linkText}
+        </AnchorLink>
+      ) : (
+        <a href={link} className={Styles.link} target="_blank" rel="noreferrer">
+          {linkText}
+          <ArrowRightCircle color="white" size={24} className={Styles.icon} />
+        </a>
+      )}
     </>
   );
 

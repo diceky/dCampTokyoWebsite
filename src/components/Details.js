@@ -11,7 +11,7 @@ import { keyframes } from "@emotion/react";
 const customAnimation = keyframes`
   from {
     opacity: 0;
-    transform: translate3d(0, 200px, 0) rotate(0);
+    transform: translate3d(0, 100px, 0) rotate(0);
   }
 
   to {
@@ -56,14 +56,13 @@ const Details = ({ lang }) => {
         <Reveal
           keyframes={customAnimation}
           triggerOnce
+          delay={600}
           className={Styles.image}
         >
           <StaticImage
             src="../images/backdropOrange.png"
             alt="orange backdrop"
             className={Styles.image}
-            loading="eager"
-            placeholder="blurred"
           />
         </Reveal>
       </Col>
@@ -90,6 +89,7 @@ const Details = ({ lang }) => {
       <Reveal
         keyframes={customAnimation}
         triggerOnce
+        delay={600}
         className={Styles.woodblock}
       >
         <StaticImage
@@ -97,8 +97,6 @@ const Details = ({ lang }) => {
           alt="wood block"
           style={{ position: "absolute" }}
           objectFit="contain"
-          loading="eager"
-          placeholder="blurred"
         />
       </Reveal>
     </Row>
