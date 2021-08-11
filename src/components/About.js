@@ -15,7 +15,7 @@ import { keyframes } from "@emotion/react";
 const customAnimation = keyframes`
   from {
     opacity: 0;
-    transform: translate3d(0, 200px, 0) rotate(0);
+    transform: translate3d(0, 100px, 0) rotate(0);
   }
 
   to {
@@ -30,9 +30,6 @@ const About = ({ lang, addHighlight }) => {
       {
         ja: allContentfulSectionAbout(filter: { node_locale: { eq: "ja" } }) {
           nodes {
-            title {
-              raw
-            }
             description {
               raw
             }
@@ -61,9 +58,6 @@ const About = ({ lang, addHighlight }) => {
           filter: { node_locale: { eq: "en-US" } }
         ) {
           nodes {
-            title {
-              raw
-            }
             description {
               raw
             }
@@ -126,34 +120,83 @@ const About = ({ lang, addHighlight }) => {
     <div className={Styles.wrapper} id="about">
       <SectionTitle text={lang === "ja" ? "d.campとは？" : "About d.camp"} />
       <Row className={Styles.titleWrapper}>
-        <Reveal keyframes={customAnimation} triggerOnce>
+        <Reveal keyframes={customAnimation} triggerOnce delay={600}>
           <StaticImage
             src="../images/foamBlue.png"
             alt="blue foam"
             className={Styles.foamBlue}
             style={{ position: "absolute" }}
             objectFit="contain"
-            loading="eager"
-            placeholder="blurred"
           />
         </Reveal>
         <Col xs={2} sm={2} md={2} lg={2}>
-          <Reveal keyframes={customAnimation} triggerOnce>
+          <Reveal keyframes={customAnimation} triggerOnce delay={600}>
             <StaticImage
               src="../images/stripeBlue.png"
               alt="blue stripe"
               className={Styles.stripe}
               objectFit="contain"
-              loading="eager"
-              placeholder="blurred"
             />
           </Reveal>
         </Col>
         <Col xs={8} sm={8} md={8} lg={8} style={{ zIndex: 1 }}>
           <h1 className={Styles.title}>
-            {lang === "ja"
-              ? renderRichText(data.ja.nodes[0].title, options)
-              : renderRichText(data.en.nodes[0].title, options)}
+            {lang === "ja" ? (
+              <>
+                <span
+                  className={`${Styles.highlightBlue} ${
+                    addHighlight ? Styles.active : ""
+                  }`}
+                >
+                  ヘンテコ
+                </span>
+                で
+                <span
+                  className={`${Styles.highlightBlue} ${
+                    addHighlight ? Styles.active : ""
+                  }`}
+                >
+                  愉快
+                </span>
+                な
+                <span
+                  className={`${Styles.highlightOrange} ${
+                    addHighlight ? Styles.active : ""
+                  }`}
+                >
+                  クリエイティビティ
+                </span>
+                の世界へようこそ。
+              </>
+            ) : (
+              <>
+                Welcome to the{" "}
+                <span
+                  className={`${Styles.highlightBlue} ${
+                    addHighlight ? Styles.active : ""
+                  }`}
+                >
+                  weird
+                </span>{" "}
+                and{" "}
+                <span
+                  className={`${Styles.highlightBlue} ${
+                    addHighlight ? Styles.active : ""
+                  }`}
+                >
+                  wonderful
+                </span>{" "}
+                world of{" "}
+                <span
+                  className={`${Styles.highlightOrange} ${
+                    addHighlight ? Styles.active : ""
+                  }`}
+                >
+                  creativity
+                </span>
+                .
+              </>
+            )}
           </h1>
           <p className={Styles.description}>
             {lang === "ja"
@@ -162,26 +205,22 @@ const About = ({ lang, addHighlight }) => {
           </p>
         </Col>
         <Col xs={2} sm={2} md={2} lg={2} style={{ textAlign: "right" }}>
-          <Reveal keyframes={customAnimation} triggerOnce>
+          <Reveal keyframes={customAnimation} triggerOnce delay={600}>
             <StaticImage
               src="../images/stripeBlue.png"
               alt="blue stripe"
               className={Styles.stripeFlipped}
               objectFit="contain"
-              loading="eager"
-              placeholder="blurred"
             />
           </Reveal>
         </Col>
-        <Reveal keyframes={customAnimation} triggerOnce>
+        <Reveal keyframes={customAnimation} triggerOnce delay={600}>
           <StaticImage
             src="../images/foamWhite.png"
             alt="white foam"
             className={Styles.foamWhite}
             style={{ position: "absolute" }}
             objectFit="contain"
-            loading="eager"
-            placeholder="blurred"
           />
         </Reveal>
       </Row>
@@ -189,6 +228,7 @@ const About = ({ lang, addHighlight }) => {
         <Reveal
           keyframes={customAnimation}
           triggerOnce
+          delay={600}
           className={Styles.wiggle}
         >
           <StaticImage
@@ -196,8 +236,6 @@ const About = ({ lang, addHighlight }) => {
             alt="wiggle"
             style={{ position: "absolute" }}
             objectFit="contain"
-            loading="eager"
-            placeholder="blurred"
           />
         </Reveal>
         {lang === "ja"
@@ -214,6 +252,7 @@ const About = ({ lang, addHighlight }) => {
                   linkText={buttonText}
                   link={buttonLink}
                   image={image}
+                  lang={lang}
                 />
               )
             )
@@ -230,12 +269,14 @@ const About = ({ lang, addHighlight }) => {
                   linkText={buttonText}
                   link={buttonLink}
                   image={image}
+                  lang={lang}
                 />
               )
             )}
         <Reveal
           keyframes={customAnimation}
           triggerOnce
+          delay={600}
           className={Styles.stripeOrange}
         >
           <StaticImage
@@ -243,8 +284,6 @@ const About = ({ lang, addHighlight }) => {
             alt="orange stripe"
             style={{ position: "absolute" }}
             objectFit="contain"
-            loading="eager"
-            placeholder="blurred"
           />
         </Reveal>
       </div>

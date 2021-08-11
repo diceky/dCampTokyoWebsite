@@ -70,11 +70,20 @@
 }
 
 .highlightBlue {
-  background-color: #88e2ff;
+  background: linear-gradient(to left, white 50%, #88e2ff 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
 }
 
 .highlightOrange {
-  background-color: #ff8e00;
+  background: linear-gradient(to left, white 50%, #ff8e00 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+
+.active {
+  background-position: left bottom;
+  transition: all 1s ease;
 }
 
 /**************
