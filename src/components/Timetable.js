@@ -38,6 +38,7 @@ const Timetable = ({ lang, data }) => {
     <Parallax
       bgImage={timetableImage}
       bgImageAlt="Final presentation on day 5"
+      bgImageStyle={{ backgroundPosition: "left" }}
       strength={200}
       className={Styles.wrapper}
     >
