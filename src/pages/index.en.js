@@ -8,7 +8,7 @@ import FAQ from "../components/FAQ";
 import SEO from "../components/Seo";
 
 const changeHeaderThresh = 30;
-const addHighlightThresh = 700;
+const addHighlightThresh = 800;
 
 const Index = ({ location }) => {
   const [changeHeader, setChangeHeader] = useState(false);
