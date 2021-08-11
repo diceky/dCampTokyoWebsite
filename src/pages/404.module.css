@@ -122,3 +122,84 @@
   top: 85%;
   left: 42%;
 }
+
+/**************
+Responsive
+**************/
+@media screen and (max-width: 576px) {
+  /*　Bootstrap xs */
+  .title {
+    font-size: 150px;
+  }
+
+  .description {
+    font-size: 18px;
+  }
+
+  .link {
+    width: 80%;
+    height: 60px;
+    font-size: 24px;
+  }
+  .foamBlue {
+    width: 50px;
+    top: 15%;
+    left: 8%;
+  }
+
+  .foamWhite {
+    width: 100px;
+    top: 80%;
+    left: 75%;
+  }
+
+  .foamGrey {
+    width: 150px;
+    top: 12%;
+    left: 34%;
+  }
+
+  .blob {
+    width: 50px;
+    top: 75%;
+    left: 9%;
+  }
+
+  .squares {
+    width: 50px;
+    top: 15%;
+    left: 86%;
+  }
+
+  .stripeBlue {
+    width: 100px;
+    top: 40%;
+    left: -10%;
+  }
+
+  .stripeOrange {
+    width: 100px;
+    top: 53%;
+    left: 89%;
+  }
+
+  .wiggle {
+    width: 100px;
+    top: 25%;
+    left: 90%;
+  }
+
+  .woodblock {
+    width: 100px;
+    top: 85%;
+    left: 42%;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  /*　Bootstrap sm 　*/
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  /*　Bootstrap md 　*/
+}
