@@ -22,6 +22,7 @@ const NotFoundPage = () => {
         src="../images/foamBlue.png"
         alt="blue foam"
         className={Styles.foamBlue}
+        style={{ position: "absolute" }}
         loading="eager"
         placeholder="blurred"
         objectFit="cover"
@@ -30,6 +31,7 @@ const NotFoundPage = () => {
         src="../images/foamWhite.png"
         alt="white foam"
         className={Styles.foamWhite}
+        style={{ position: "absolute" }}
         loading="eager"
         placeholder="blurred"
         objectFit="cover"
@@ -38,6 +40,7 @@ const NotFoundPage = () => {
         src="../images/blob.png"
         alt="orange blob"
         className={Styles.blob}
+        style={{ position: "absolute" }}
         loading="eager"
         placeholder="blurred"
         objectFit="cover"
@@ -46,6 +49,7 @@ const NotFoundPage = () => {
         src="../images/foamGrey.png"
         alt="grey foam"
         className={Styles.foamGrey}
+        style={{ position: "absolute" }}
         loading="eager"
         placeholder="blurred"
         objectFit="cover"
@@ -54,6 +58,7 @@ const NotFoundPage = () => {
         src="../images/squares.png"
         alt="blue squares"
         className={Styles.squares}
+        style={{ position: "absolute" }}
         loading="eager"
         placeholder="blurred"
         objectFit="cover"
@@ -62,6 +67,7 @@ const NotFoundPage = () => {
         src="../images/stripeBlue.png"
         alt="blue stripe"
         className={Styles.stripeBlue}
+        style={{ position: "absolute" }}
         loading="eager"
         placeholder="blurred"
         objectFit="cover"
@@ -70,6 +76,7 @@ const NotFoundPage = () => {
         src="../images/stripeOrange.png"
         alt="orange stripe"
         className={Styles.stripeOrange}
+        style={{ position: "absolute" }}
         loading="eager"
         placeholder="blurred"
         objectFit="cover"
@@ -78,6 +85,7 @@ const NotFoundPage = () => {
         src="../images/wiggle.png"
         alt="wiggle"
         className={Styles.wiggle}
+        style={{ position: "absolute" }}
         loading="eager"
         placeholder="blurred"
         objectFit="cover"
@@ -86,6 +94,7 @@ const NotFoundPage = () => {
         src="../images/woodblock.png"
         alt="wooden block"
         className={Styles.woodblock}
+        style={{ position: "absolute" }}
         loading="eager"
         placeholder="blurred"
         objectFit="cover"
