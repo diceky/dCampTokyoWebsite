@@ -4,8 +4,11 @@ import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
+import timetableImage from "../images/timetable.png";
 
 import { useWindowDimensions } from "../misc/customHooks";
+
+import { Parallax } from "react-parallax";
 
 const Timetable = ({ lang, data }) => {
   const { width } = useWindowDimensions();
@@ -32,51 +35,60 @@ const Timetable = ({ lang, data }) => {
   };
 
   return (
-    <Row className={Styles.wrapper} id="timetable">
-      <Col
-        xs={{ span: 11, offset: 1 }}
-        sm={{ span: 11, offset: 1 }}
-        md={{ span: 11, offset: 1 }}
-        lg={{ span: 3, offset: 1 }}
+    <Row id="timetable">
+      <Parallax
+        bgImage={timetableImage}
+        bgImageAlt="Final presentation on day 5"
+        strength={200}
+        className={Styles.wrapper}
       >
-        <p className={Styles.title}>A day at d.camp</p>
-      </Col>
+        <Col
+          xs={{ span: 11, offset: 1 }}
+          sm={{ span: 11, offset: 1 }}
+          md={{ span: 11, offset: 1 }}
+          lg={{ span: 3, offset: 1 }}
+        >
+          <p className={Styles.title}>A day at d.camp</p>
+        </Col>
 
-      <Col
-        xs={{ span: 11, offset: 1 }}
-        sm={{ span: 11, offset: 1 }}
-        md={{ span: 11, offset: 1 }}
-        lg={{ span: 8, offset: 0 }}
-        className={Styles.timetableWrapper}
-      >
-        {width >= 576 ? (
-          <>
-            <div className={Styles.timeWrapper}>
-              {data.map(({ time }, index) => (
-                <p className={Styles.time} key={index}>
-                  {time}
-                </p>
-              ))}
-            </div>
-            <div className={Styles.eventWrapper}>
-              {data.map(({ event }, index) => (
-                <p className={Styles.event} key={index}>
-                  {renderRichText(event, options)}
-                </p>
-              ))}
-            </div>
-          </>
-        ) : (
-          <>
-            {data.map(({ time, event }, index) => (
-              <div className={Styles.timeWrapper} key={index}>
-                <p className={Styles.time}>{time}</p>
-                <p className={Styles.event}>{renderRichText(event, options)}</p>
+        <Col
+          xs={{ span: 11, offset: 1 }}
+          sm={{ span: 11, offset: 1 }}
+          md={{ span: 11, offset: 1 }}
+          lg={{ span: 8, offset: 0 }}
+          className={Styles.timetableWrapper}
+        >
+          {width >= 576 ? (
+            <>
+              <div className={Styles.timeWrapper}>
+                {data.map(({ time }, index) => (
+                  <p className={Styles.time} key={index}>
+                    {time}
+                  </p>
+                ))}
               </div>
-            ))}
-          </>
-        )}
-      </Col>
+              <div className={Styles.eventWrapper}>
+                {data.map(({ event }, index) => (
+                  <p className={Styles.event} key={index}>
+                    {renderRichText(event, options)}
+                  </p>
+                ))}
+              </div>
+            </>
+          ) : (
+            <>
+              {data.map(({ time, event }, index) => (
+                <div className={Styles.timeWrapper} key={index}>
+                  <p className={Styles.time}>{time}</p>
+                  <p className={Styles.event}>
+                    {renderRichText(event, options)}
+                  </p>
+                </div>
+              ))}
+            </>
+          )}
+        </Col>
+      </Parallax>
     </Row>
   );
 };
