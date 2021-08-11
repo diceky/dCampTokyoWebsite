@@ -27,7 +27,8 @@
   margin-bottom: 50px;
 }
 
-.item:hover {
+.item:hover,
+.item:active {
   color: white;
 }
 
@@ -49,4 +50,9 @@
   text-decoration: none;
   color: white;
   font-weight: 300;
+}
+
+.selectLang:hover,
+.selectLang:active {
+  color: white;
 }
