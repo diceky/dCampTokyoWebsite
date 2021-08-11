@@ -35,13 +35,13 @@ const Timetable = ({ lang, data }) => {
   };
 
   return (
-    <Row id="timetable">
-      <Parallax
-        bgImage={timetableImage}
-        bgImageAlt="Final presentation on day 5"
-        strength={200}
-        className={Styles.wrapper}
-      >
+    <Parallax
+      bgImage={timetableImage}
+      bgImageAlt="Final presentation on day 5"
+      strength={200}
+      className={Styles.wrapper}
+    >
+      <Row id="timetable">
         <Col
           xs={{ span: 11, offset: 1 }}
           sm={{ span: 11, offset: 1 }}
@@ -88,8 +88,8 @@ const Timetable = ({ lang, data }) => {
             </>
           )}
         </Col>
-      </Parallax>
-    </Row>
+      </Row>
+    </Parallax>
   );
 };
 
