@@ -62,6 +62,7 @@ const FAQ = ({ lang }) => {
         src="../images/blob.png"
         alt="orange blob"
         className={Styles.blob}
+        style={{ position: "absolute" }}
         objectFit="contain"
         loading="eager"
         placeholder="blurred"
@@ -70,6 +71,7 @@ const FAQ = ({ lang }) => {
         src="../images/squares.png"
         alt="blue square"
         className={Styles.square}
+        style={{ position: "absolute" }}
         objectFit="contain"
         loading="eager"
         placeholder="blurred"

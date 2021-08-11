@@ -114,6 +114,7 @@ const About = ({ lang }) => {
           src="../images/foamBlue.png"
           alt="blue foam"
           className={Styles.foamBlue}
+          style={{ position: "absolute" }}
           objectFit="contain"
           loading="eager"
           placeholder="blurred"
@@ -154,6 +155,7 @@ const About = ({ lang }) => {
           src="../images/foamWhite.png"
           alt="white foam"
           className={Styles.foamWhite}
+          style={{ position: "absolute" }}
           objectFit="contain"
           loading="eager"
           placeholder="blurred"
@@ -164,6 +166,7 @@ const About = ({ lang }) => {
           src="../images/wiggle.png"
           alt="wiggle"
           className={Styles.wiggle}
+          style={{ position: "absolute" }}
           objectFit="contain"
           loading="eager"
           placeholder="blurred"
@@ -205,6 +208,7 @@ const About = ({ lang }) => {
           src="../images/stripeOrange.png"
           alt="orange stripe"
           className={Styles.stripeOrange}
+          style={{ position: "absolute" }}
           objectFit="contain"
           loading="eager"
           placeholder="blurred"

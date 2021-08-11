@@ -31,6 +31,7 @@ const Hero = ({ setHeight }) => {
             src="../images/hero.png"
             alt="hero image"
             className={Styles.image}
+            style={{ position: "absolute" }}
             loading="eager"
             placeholder="blurred"
             objectFit="cover"

@@ -49,6 +49,7 @@ const Feature = ({
         src="../images/backdropBlue.png"
         alt="blue backdrop"
         className={Styles.backdrop}
+        style={{ position: "absolute" }}
         loading="eager"
         placeholder="blurred"
         objectFit="cover"
@@ -57,6 +58,9 @@ const Feature = ({
         image={image.gatsbyImageData}
         alt={image.description}
         className={Styles.image}
+        style={
+          width <= 576 ? { position: "relative" } : { position: "absolute" }
+        }
         loading="eager"
         placeholder="blurred"
         objectFit="cover"

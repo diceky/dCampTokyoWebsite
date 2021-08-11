@@ -71,6 +71,7 @@ const Details = ({ lang }) => {
         src="../images/woodblock.png"
         alt="wood block"
         className={Styles.woodblock}
+        style={{ position: "absolute" }}
         objectFit="contain"
         loading="eager"
         placeholder="blurred"

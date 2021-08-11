@@ -56,6 +56,7 @@ const Menu = ({ lang, isOpen, toggleMenu }) => {
         src="../images/foamGrey.png"
         alt="grey foam"
         className={Styles.image}
+        style={{ position: "absolute" }}
         loading="eager"
         placeholder="blurred"
       />
