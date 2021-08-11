@@ -3,7 +3,7 @@ module.exports = {
     title: "d.camp Tokyo",
     description: "Official website for d.camp Tokyo.",
     author: "Daisuke Yukita",
-    siteUrl: "https://www.yourdomain.tld",
+    siteUrl: "https://tokyo.ideo.com/dcamp",
     languages: {
       langs: ["en", "ja"],
       defaultLangKey: "ja",
