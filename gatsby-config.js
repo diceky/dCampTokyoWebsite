@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: "d.camp Tokyo",
-    description: "Official website for d.camp Tokyo.",
+    description:
+      "Official website for d.camp Tokyo. Welcome to the werid and wonderful world of creativity.",
     author: "Daisuke Yukita",
     siteUrl: "https://tokyo.ideo.com/dcamp",
     languages: {
@@ -18,6 +19,8 @@ module.exports = {
     "react",
     "react-bootstrap",
     "react-dom",
+    "gatsby-plugin-react-helmet",
+    "react-helmet",
     {
       resolve: "gatsby-source-contentful",
       options: {
