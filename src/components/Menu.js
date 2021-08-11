@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { StaticImage } from "gatsby-plugin-image";
 
-import Reveal, { Bounce } from "react-awesome-reveal";
+import Reveal from "react-awesome-reveal";
 import { keyframes } from "@emotion/react";
 
 const customAnimation = keyframes`

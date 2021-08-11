@@ -9,7 +9,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import { useStaticQuery, graphql } from "gatsby";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { MARKS, BLOCKS, INLINES } from "@contentful/rich-text-types";
-import Reveal, { Bounce } from "react-awesome-reveal";
+import Reveal from "react-awesome-reveal";
 import { keyframes } from "@emotion/react";
 
 const customAnimation = keyframes`

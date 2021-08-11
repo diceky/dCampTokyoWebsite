@@ -11,7 +11,7 @@ import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 import { useWindowDimensions } from "../misc/customHooks";
 
-import Reveal, { Bounce } from "react-awesome-reveal";
+import Reveal from "react-awesome-reveal";
 import { keyframes } from "@emotion/react";
 
 const customAnimation = keyframes`
@@ -36,7 +36,7 @@ const Feature = ({
   image,
   flipped,
 }) => {
-  const { width, height } = useWindowDimensions();
+  const { width } = useWindowDimensions();
 
   const Text = ({ children }) => children;
   const InlineLink = ({ link, children }) => (

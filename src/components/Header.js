@@ -9,7 +9,7 @@ import Menu from "./Menu";
 import { useWindowDimensions } from "../misc/customHooks";
 
 const Header = ({ lang, url, changeColor }) => {
-  const { width, height } = useWindowDimensions();
+  const { width } = useWindowDimensions();
 
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);

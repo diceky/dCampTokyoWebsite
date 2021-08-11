@@ -8,7 +8,7 @@ import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import { useWindowDimensions } from "../misc/customHooks";
 
 const Timetable = ({ lang, data }) => {
-  const { width, height } = useWindowDimensions();
+  const { width } = useWindowDimensions();
 
   const Text = ({ children }) => children;
   const InlineLink = ({ link, children }) => (
