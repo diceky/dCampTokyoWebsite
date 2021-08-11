@@ -31,7 +31,7 @@ const Footer = ({ lang }) => {
             {lang === "ja" ? "IDEO Tokyoについて" : "About IDEO Tokyo"}
           </a>
           <a
-            href="https://www.facebook.com/ideotokyo/"
+            href="https://www.instagram.com/ideotokyo/"
             target="_blank"
             rel="noreferrer"
             className={Styles.icon}
@@ -39,7 +39,7 @@ const Footer = ({ lang }) => {
             <Instagram color="black" size={24} />
           </a>
           <a
-            href="https://www.instagram.com/ideotokyo/"
+            href="https://www.facebook.com/ideotokyo/"
             target="_blank"
             rel="noreferrer"
             className={Styles.icon}
