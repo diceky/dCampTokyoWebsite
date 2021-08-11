@@ -9,15 +9,21 @@ export const useWindowDimensions = () => {
     };
   };
 
-  const [windowDimensions, setWindowDimensions] = useState(
-    getWindowDimensions()
-  );
+  const [windowDimensions, setWindowDimensions] = useState({
+    width: 0,
+    height: 0,
+  });
+
   useEffect(() => {
+    setWindowDimensions(getWindowDimensions());
+
     const onResize = () => {
       setWindowDimensions(getWindowDimensions());
     };
     window.addEventListener("resize", onResize);
+
     return () => window.removeEventListener("resize", onResize);
   }, []);
+
   return windowDimensions;
 };
