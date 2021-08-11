@@ -28,7 +28,9 @@ const RedirectIndex = () => {
     const langKey = getUserLangKey(langs, defaultLangKey);
     const homeUrl = withPrefix(`/${langKey}/`);
 
-    navigate(homeUrl);
+    const homeUrlWithoutPrefix = homeUrl.replace(`/dcamp`, ``);
+
+    navigate(homeUrlWithoutPrefix);
   }
 
   return <div />;

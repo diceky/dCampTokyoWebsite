@@ -37,8 +37,13 @@ const Layout = ({ children, lang, location, changeColor }) => {
   }
 
   const url = location.pathname;
+  const urlWithoutPrefix = url.replace(`/dcamp`, ``);
   const { langs, defaultLangKey } = data.site.siteMetadata.languages;
-  const langKey = getCurrentLangKey(langs, defaultLangKey, url);
+  const langKey = getCurrentLangKey(langs, defaultLangKey, urlWithoutPrefix);
+
+  // console.log(`url:${url}`);
+  // console.log(`url without /dcamp:${}`);
+  // console.log(`langKey:${langKey}`);
 
   return (
     <IntlProvider locale={langKey}>
