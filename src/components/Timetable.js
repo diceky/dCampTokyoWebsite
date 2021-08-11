@@ -53,19 +53,23 @@ const Timetable = ({ lang, data }) => {
           <>
             <div className={Styles.timeWrapper}>
               {data.map(({ time }, index) => (
-                <p className={Styles.time}>{time}</p>
+                <p className={Styles.time} key={index}>
+                  {time}
+                </p>
               ))}
             </div>
             <div className={Styles.eventWrapper}>
               {data.map(({ event }, index) => (
-                <p className={Styles.event}>{renderRichText(event, options)}</p>
+                <p className={Styles.event} key={index}>
+                  {renderRichText(event, options)}
+                </p>
               ))}
             </div>
           </>
         ) : (
           <>
             {data.map(({ time, event }, index) => (
-              <div className={Styles.timeWrapper}>
+              <div className={Styles.timeWrapper} key={index}>
                 <p className={Styles.time}>{time}</p>
                 <p className={Styles.event}>{renderRichText(event, options)}</p>
               </div>

@@ -74,13 +74,13 @@ const Details = ({ lang }) => {
       >
         {lang === "ja"
           ? data.ja.nodes[0].details.map(({ title, content }, index) => (
-              <div className={Styles.item}>
+              <div className={Styles.item} key={index}>
                 <p className={Styles.title}>{title}</p>
                 <p className={Styles.content}>{content}</p>
               </div>
             ))
           : data.en.nodes[0].details.map(({ title, content }, index) => (
-              <div className={Styles.item}>
+              <div className={Styles.item} key={index}>
                 <p className={Styles.title}>{title}</p>
                 <p className={Styles.content}>{content}</p>
               </div>

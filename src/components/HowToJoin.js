@@ -45,7 +45,7 @@ const HowToJoin = ({ lang }) => {
       >
         {lang === "ja"
           ? data.ja.nodes[0].steps.map((item, index) => (
-              <div className={Styles.item}>
+              <div className={Styles.item} key={index}>
                 <p className={Styles.index}>{index + 1}</p>
                 <p className={Styles.text}>{item.text}</p>
                 {item.hasButton && (
@@ -61,7 +61,7 @@ const HowToJoin = ({ lang }) => {
               </div>
             ))
           : data.en.nodes[0].steps.map((item, index) => (
-              <div className={Styles.item}>
+              <div className={Styles.item} key={index}>
                 <p className={Styles.index}>{index + 1}</p>
                 <p className={Styles.text}>{item.text}</p>
                 {item.hasButton && (

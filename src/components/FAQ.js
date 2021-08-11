@@ -108,7 +108,7 @@ const FAQ = ({ lang }) => {
       >
         {lang === "ja"
           ? data.ja.nodes[0].faq.map(({ answer, question }, index) => (
-              <div className={Styles.item}>
+              <div className={Styles.item} key={index}>
                 <p className={Styles.question}>{question}</p>
                 <p className={Styles.answer}>
                   {renderRichText(answer, options)}
@@ -116,7 +116,7 @@ const FAQ = ({ lang }) => {
               </div>
             ))
           : data.en.nodes[0].faq.map(({ answer, question }, index) => (
-              <div className={Styles.item}>
+              <div className={Styles.item} key={index}>
                 <p className={Styles.question}>{question}</p>
                 <p className={Styles.answer}>
                   {renderRichText(answer, options)}
