@@ -106,7 +106,7 @@ Responsive
     position: relative;
   }
   .backdrop {
-    width: 90%;
+    width: 95%;
     min-height: 30vh;
     max-height: 30vh;
     position: absolute;

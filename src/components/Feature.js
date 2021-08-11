@@ -10,6 +10,21 @@ import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 
 import { useWindowDimensions } from "../misc/customHooks";
 
+import Reveal, { Bounce } from "react-awesome-reveal";
+import { keyframes } from "@emotion/react";
+
+const customAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: translate3d(0, 200px, 0) rotate(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0);
+  }
+`;
+
 const Feature = ({
   index,
   lang,
@@ -45,15 +60,17 @@ const Feature = ({
 
   const featureImage = (
     <>
-      <StaticImage
-        src="../images/backdropBlue.png"
-        alt="blue backdrop"
-        className={Styles.backdrop}
-        style={{ position: "absolute" }}
-        loading="eager"
-        placeholder="blurred"
-        objectFit="cover"
-      />
+      <Reveal keyframes={customAnimation} triggerOnce>
+        <StaticImage
+          src="../images/backdropBlue.png"
+          alt="blue backdrop"
+          className={Styles.backdrop}
+          style={{ position: "absolute" }}
+          loading="eager"
+          placeholder="blurred"
+          objectFit="cover"
+        />
+      </Reveal>
       <GatsbyImage
         image={image.gatsbyImageData}
         alt={image.description}

@@ -5,6 +5,20 @@ import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { StaticImage } from "gatsby-plugin-image";
 import { useStaticQuery, graphql } from "gatsby";
+import Reveal from "react-awesome-reveal";
+import { keyframes } from "@emotion/react";
+
+const customAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: translate3d(0, 200px, 0) rotate(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0);
+  }
+`;
 
 const Details = ({ lang }) => {
   const data = useStaticQuery(graphql`
@@ -39,13 +53,19 @@ const Details = ({ lang }) => {
         md={{ span: 2, offset: 0 }}
         lg={{ span: 2, offset: 0 }}
       >
-        <StaticImage
-          src="../images/backdropOrange.png"
-          alt="orange backdrop"
+        <Reveal
+          keyframes={customAnimation}
+          triggerOnce
           className={Styles.image}
-          loading="eager"
-          placeholder="blurred"
-        />
+        >
+          <StaticImage
+            src="../images/backdropOrange.png"
+            alt="orange backdrop"
+            className={Styles.image}
+            loading="eager"
+            placeholder="blurred"
+          />
+        </Reveal>
       </Col>
       <Col
         xs={{ span: 10, offset: 0 }}
@@ -67,15 +87,20 @@ const Details = ({ lang }) => {
               </div>
             ))}
       </Col>
-      <StaticImage
-        src="../images/woodblock.png"
-        alt="wood block"
+      <Reveal
+        keyframes={customAnimation}
+        triggerOnce
         className={Styles.woodblock}
-        style={{ position: "absolute" }}
-        objectFit="contain"
-        loading="eager"
-        placeholder="blurred"
-      />
+      >
+        <StaticImage
+          src="../images/woodblock.png"
+          alt="wood block"
+          style={{ position: "absolute" }}
+          objectFit="contain"
+          loading="eager"
+          placeholder="blurred"
+        />
+      </Reveal>
     </Row>
   );
 };

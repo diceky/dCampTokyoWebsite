@@ -9,8 +9,22 @@ import { StaticImage } from "gatsby-plugin-image";
 import { useStaticQuery, graphql } from "gatsby";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { MARKS, BLOCKS, INLINES } from "@contentful/rich-text-types";
+import Reveal, { Bounce } from "react-awesome-reveal";
+import { keyframes } from "@emotion/react";
 
-const About = ({ lang }) => {
+const customAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: translate3d(0, 200px, 0) rotate(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0);
+  }
+`;
+
+const About = ({ lang, addHighlight }) => {
   const data = useStaticQuery(
     graphql`
       {
@@ -106,28 +120,34 @@ const About = ({ lang }) => {
       text.split("\n").flatMap((text, i) => [i > 0 && <br />, text]),
   };
 
+  console.log("About is rendered");
+
   return (
     <div className={Styles.wrapper} id="about">
       <SectionTitle text={lang === "ja" ? "d.campとは？" : "About d.camp"} />
       <Row className={Styles.titleWrapper}>
-        <StaticImage
-          src="../images/foamBlue.png"
-          alt="blue foam"
-          className={Styles.foamBlue}
-          style={{ position: "absolute" }}
-          objectFit="contain"
-          loading="eager"
-          placeholder="blurred"
-        />
-        <Col xs={2} sm={2} md={2} lg={2}>
+        <Reveal keyframes={customAnimation} triggerOnce>
           <StaticImage
-            src="../images/stripeBlue.png"
-            alt="blue stripe"
-            className={Styles.stripe}
+            src="../images/foamBlue.png"
+            alt="blue foam"
+            className={Styles.foamBlue}
+            style={{ position: "absolute" }}
             objectFit="contain"
             loading="eager"
             placeholder="blurred"
           />
+        </Reveal>
+        <Col xs={2} sm={2} md={2} lg={2}>
+          <Reveal keyframes={customAnimation} triggerOnce>
+            <StaticImage
+              src="../images/stripeBlue.png"
+              alt="blue stripe"
+              className={Styles.stripe}
+              objectFit="contain"
+              loading="eager"
+              placeholder="blurred"
+            />
+          </Reveal>
         </Col>
         <Col xs={8} sm={8} md={8} lg={8} style={{ zIndex: 1 }}>
           <h1 className={Styles.title}>
@@ -142,35 +162,44 @@ const About = ({ lang }) => {
           </p>
         </Col>
         <Col xs={2} sm={2} md={2} lg={2} style={{ textAlign: "right" }}>
+          <Reveal keyframes={customAnimation} triggerOnce>
+            <StaticImage
+              src="../images/stripeBlue.png"
+              alt="blue stripe"
+              className={Styles.stripeFlipped}
+              objectFit="contain"
+              loading="eager"
+              placeholder="blurred"
+            />
+          </Reveal>
+        </Col>
+        <Reveal keyframes={customAnimation} triggerOnce>
           <StaticImage
-            src="../images/stripeBlue.png"
-            alt="blue stripe"
-            className={Styles.stripeFlipped}
+            src="../images/foamWhite.png"
+            alt="white foam"
+            className={Styles.foamWhite}
+            style={{ position: "absolute" }}
             objectFit="contain"
             loading="eager"
             placeholder="blurred"
           />
-        </Col>
-        <StaticImage
-          src="../images/foamWhite.png"
-          alt="white foam"
-          className={Styles.foamWhite}
-          style={{ position: "absolute" }}
-          objectFit="contain"
-          loading="eager"
-          placeholder="blurred"
-        />
+        </Reveal>
       </Row>
       <div className={Styles.featureWrapper}>
-        <StaticImage
-          src="../images/wiggle.png"
-          alt="wiggle"
+        <Reveal
+          keyframes={customAnimation}
+          triggerOnce
           className={Styles.wiggle}
-          style={{ position: "absolute" }}
-          objectFit="contain"
-          loading="eager"
-          placeholder="blurred"
-        />
+        >
+          <StaticImage
+            src="../images/wiggle.png"
+            alt="wiggle"
+            style={{ position: "absolute" }}
+            objectFit="contain"
+            loading="eager"
+            placeholder="blurred"
+          />
+        </Reveal>
         {lang === "ja"
           ? data.ja.nodes[0].features.map(
               (
@@ -204,15 +233,20 @@ const About = ({ lang }) => {
                 />
               )
             )}
-        <StaticImage
-          src="../images/stripeOrange.png"
-          alt="orange stripe"
+        <Reveal
+          keyframes={customAnimation}
+          triggerOnce
           className={Styles.stripeOrange}
-          style={{ position: "absolute" }}
-          objectFit="contain"
-          loading="eager"
-          placeholder="blurred"
-        />
+        >
+          <StaticImage
+            src="../images/stripeOrange.png"
+            alt="orange stripe"
+            style={{ position: "absolute" }}
+            objectFit="contain"
+            loading="eager"
+            placeholder="blurred"
+          />
+        </Reveal>
       </div>
       <Timetable
         data={
@@ -225,4 +259,4 @@ const About = ({ lang }) => {
   );
 };
 
-export default About;
+export default React.memo(About);

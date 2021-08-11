@@ -8,6 +8,21 @@ import { useStaticQuery, graphql } from "gatsby";
 import { renderRichText } from "gatsby-source-contentful/rich-text";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 
+import Reveal from "react-awesome-reveal";
+import { keyframes } from "@emotion/react";
+
+const customAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: translate3d(0, 200px, 0) rotate(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0);
+  }
+`;
+
 const FAQ = ({ lang }) => {
   const data = useStaticQuery(graphql`
     {
@@ -58,24 +73,26 @@ const FAQ = ({ lang }) => {
   return (
     <Row className={Styles.wrapper} id="faq">
       <SectionTitle text={lang === "ja" ? "よくある質問" : "FAQ"} />
-      <StaticImage
-        src="../images/blob.png"
-        alt="orange blob"
-        className={Styles.blob}
-        style={{ position: "absolute" }}
-        objectFit="contain"
-        loading="eager"
-        placeholder="blurred"
-      />
-      <StaticImage
-        src="../images/squares.png"
-        alt="blue square"
-        className={Styles.square}
-        style={{ position: "absolute" }}
-        objectFit="contain"
-        loading="eager"
-        placeholder="blurred"
-      />
+      <Reveal keyframes={customAnimation} triggerOnce className={Styles.blob}>
+        <StaticImage
+          src="../images/blob.png"
+          alt="orange blob"
+          style={{ position: "absolute" }}
+          objectFit="contain"
+          loading="eager"
+          placeholder="blurred"
+        />
+      </Reveal>
+      <Reveal keyframes={customAnimation} triggerOnce className={Styles.square}>
+        <StaticImage
+          src="../images/squares.png"
+          alt="blue square"
+          style={{ position: "absolute" }}
+          objectFit="contain"
+          loading="eager"
+          placeholder="blurred"
+        />
+      </Reveal>
       <Col
         xs={{ span: 10, offset: 1 }}
         sm={{ span: 10, offset: 1 }}

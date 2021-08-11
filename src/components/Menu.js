@@ -4,6 +4,21 @@ import { Link } from "gatsby";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
 import { StaticImage } from "gatsby-plugin-image";
 
+import Reveal, { Bounce } from "react-awesome-reveal";
+import { keyframes } from "@emotion/react";
+
+const customAnimation = keyframes`
+  from {
+    opacity: 0;
+    transform: translate3d(0, 200px, 0) rotate(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0);
+  }
+`;
+
 const Menu = ({ lang, isOpen, toggleMenu }) => {
   return (
     <div className={isOpen ? Styles.wrapper : Styles.wrapperClosed}>
@@ -52,14 +67,15 @@ const Menu = ({ lang, isOpen, toggleMenu }) => {
           <span className={Styles.currentLang}>EN</span>
         </div>
       )}
-      <StaticImage
-        src="../images/foamGrey.png"
-        alt="grey foam"
-        className={Styles.image}
-        style={{ position: "absolute" }}
-        loading="eager"
-        placeholder="blurred"
-      />
+      <Reveal keyframes={customAnimation} triggerOnce className={Styles.image}>
+        <StaticImage
+          src="../images/foamGrey.png"
+          alt="grey foam"
+          style={{ position: "absolute" }}
+          loading="eager"
+          placeholder="blurred"
+        />
+      </Reveal>
     </div>
   );
 };

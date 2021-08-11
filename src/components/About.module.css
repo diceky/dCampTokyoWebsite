@@ -24,7 +24,7 @@
 
 .stripe {
   width: 90%;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .stripeFlipped {
@@ -95,6 +95,9 @@ Responsive
     font-size: 14px;
     font-weight: 500;
     margin-top: 40px;
+  }
+  .stripe {
+    width: 120%;
   }
   .foamBlue {
     width: 80px;
