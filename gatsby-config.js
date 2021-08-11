@@ -9,6 +9,7 @@ module.exports = {
       defaultLangKey: "ja",
     },
   },
+  pathPrefix: `/dcamp`,
   plugins: [
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
