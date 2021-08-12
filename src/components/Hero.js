@@ -26,12 +26,11 @@ const Hero = ({ setHeight }) => {
     const gatsbyImageElement = gatsbyElement.getElementsByClassName(
       "gatsby-image-wrapper"
     );
-    if (isIE && gatsbyImageElement) {
-      console.log("found Gatsby element");
-      // setTimeout(() => {
-      //   navigate("/");
-      //   console.log("found Gatsby element so will refresh once...");
-      // }, 2000);
+    if (isIE && gatsbyImageElement.length > 0) {
+      setTimeout(() => {
+        navigate("/");
+        console.log("found Gatsby element so will refresh once...");
+      }, 2000);
     }
   }, []);
 
