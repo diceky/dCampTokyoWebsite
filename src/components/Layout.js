@@ -37,8 +37,9 @@ const Layout = ({ children, lang, location, changeColor }) => {
       setTimeout(() => {
         const url = location.pathname;
         const urlWithoutPrefix = url.replace(`/dcamp`, ``);
+        console.log("refreshing once...");
         navigate(urlWithoutPrefix);
-      }, 1000);
+      }, 3000);
   }, []);
 
   let isIE = false;
