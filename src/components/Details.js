@@ -14,7 +14,7 @@ import backdropOrangeImage from "../images/backdropOrange.png";
 const customAnimation = keyframes`
   from {
     opacity: 0;
-    transform: translate3d(0, 100px, 0) rotate(0);
+    transform: translate3d(-100px, 0, 0) rotate(0);
   }
 
   to {
@@ -102,7 +102,7 @@ const Details = ({ lang }) => {
       <Reveal
         keyframes={customAnimation}
         triggerOnce
-        delay={600}
+        delay={200}
         className={Styles.woodblock}
       >
         <StaticImage
