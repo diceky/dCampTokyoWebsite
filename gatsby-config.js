@@ -5,6 +5,7 @@ module.exports = {
       "Official website for d.camp Tokyo. Welcome to the werid and wonderful world of creativity.",
     author: "Daisuke Yukita",
     siteUrl: "https://tokyo.ideo.com/dcamp",
+    image: `/images/ogp.png`,
     languages: {
       langs: ["en", "ja"],
       defaultLangKey: "ja",
