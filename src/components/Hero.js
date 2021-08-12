@@ -30,7 +30,7 @@ const Hero = ({ setHeight }) => {
       setTimeout(() => {
         navigate("/");
         console.log("found Gatsby element so will refresh once...");
-      }, 2000);
+      }, 1000);
     }
   }, []);
 
