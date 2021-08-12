@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Container } from "react-bootstrap";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import * as Styles from "./Layout.module.css";
-import { useStaticQuery, graphql, navigate } from "gatsby";
+import { useStaticQuery, graphql } from "gatsby";
 
 import { getCurrentLangKey } from "ptz-i18n";
 import { IntlProvider } from "react-intl";
@@ -31,15 +31,6 @@ const Layout = ({ children, lang, location, changeColor }) => {
     `
   );
 
-  useEffect(() => {
-    //reload page once on IE to fix broken DOM issue
-    if (isIE)
-      setTimeout(() => {
-        console.log("refreshing once...");
-        navigate("/");
-      }, 3000);
-  }, []);
-
   let isIE = false;
   if (typeof window !== `undefined`) {
     isIE = !!window.MSInputMethodContext && !!document.documentMode;
@@ -49,10 +40,6 @@ const Layout = ({ children, lang, location, changeColor }) => {
   const urlWithoutPrefix = url.replace(`/dcamp`, ``);
   const { langs, defaultLangKey } = data.site.siteMetadata.languages;
   const langKey = getCurrentLangKey(langs, defaultLangKey, urlWithoutPrefix);
-
-  // console.log(`url:${url}`);
-  // console.log(`url without /dcamp:${}`);
-  // console.log(`langKey:${langKey}`);
 
   return (
     <IEContext.Provider value={isIE}>

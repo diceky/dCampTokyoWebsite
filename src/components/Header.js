@@ -118,7 +118,10 @@ const Header = ({ lang, url, changeColor }) => {
             lg={{ span: 2, offset: 10 }}
             style={{ zIndex: 2 }}
           >
-            <button className={Styles.menuBtn} onClick={toggleMenu}>
+            <button
+              className={`${Styles.menuBtn} ${width >= 768 ? Styles.show : ""}`}
+              onClick={toggleMenu}
+            >
               <svg
                 width="38"
                 height="22"
@@ -147,7 +150,7 @@ const Header = ({ lang, url, changeColor }) => {
           </Col>
           <a
             href="https://forms.gle/paijHYLXnSu4mSTbA"
-            className={`${Styles.cta} ${width >= 768 ? Styles.showCta : ""}`}
+            className={`${Styles.cta} ${width >= 768 ? Styles.show : ""}`}
             target="_blank"
             rel="noreferrer"
           >

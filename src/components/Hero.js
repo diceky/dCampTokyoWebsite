@@ -26,7 +26,7 @@ const Hero = ({ setHeight }) => {
         <>
           <img
             src={HeroImage}
-            alt="hero image"
+            alt="hero"
             className={isIE ? Styles.imageIE : Styles.image}
           />
           <div className={Styles.logoWrapper}>
@@ -42,7 +42,7 @@ const Hero = ({ setHeight }) => {
         <>
           <StaticImage
             src="../images/hero.png"
-            alt="hero image"
+            alt="hero"
             className={Styles.image}
             style={{ position: "absolute" }}
             loading="eager"

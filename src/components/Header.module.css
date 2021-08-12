@@ -153,6 +153,7 @@
 }
 
 .menuBtn {
+  opacity: 0;
   background: none;
   border: none;
   outline: none;
@@ -198,7 +199,7 @@
   box-shadow: 3px 3px #ad6101;
 }
 
-.showCta {
+.show {
   opacity: 1;
 }
 
