@@ -123,8 +123,6 @@ const About = ({ lang, addHighlight }) => {
       text.split("\n").flatMap((text, i) => [i > 0 && <br />, text]),
   };
 
-  console.log(`isIE at About:${isIE}`);
-
   return (
     <div className={Styles.wrapper} id="about">
       <SectionTitle text={lang === "ja" ? "d.campとは？" : "About d.camp"} />

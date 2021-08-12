@@ -20,8 +20,6 @@ const Hero = ({ setHeight }) => {
     });
   }, [setHeight]);
 
-  console.log(`isIE at Hero:${isIE}`);
-
   return (
     <div className={Styles.wrapper} ref={wrapperRef}>
       {isIE ? (
