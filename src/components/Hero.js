@@ -24,7 +24,11 @@ const Hero = ({ setHeight }) => {
     <div className={Styles.wrapper} ref={wrapperRef}>
       {isIE ? (
         <>
-          <img src={HeroImage} alt="hero image" className={Styles.image} />
+          <img
+            src={HeroImage}
+            alt="hero image"
+            className={isIE ? Styles.imageIE : Styles.image}
+          />
           <div className={Styles.logoWrapper}>
             <img
               src={LogoImage}

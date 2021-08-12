@@ -62,7 +62,7 @@ const Details = ({ lang }) => {
           <img
             src={backdropOrangeImage}
             alt="orange backdrop"
-            className={Styles.image}
+            className={isIE ? Styles.imageIE : Styles.image}
           />
         ) : (
           <Reveal

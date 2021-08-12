@@ -12,6 +12,11 @@
   height: 100%;
 }
 
+.imageIE {
+  width: 100%;
+  height: auto;
+}
+
 .logoWrapper {
   position: absolute;
   top: 40%;
