@@ -45,7 +45,7 @@ const Layout = ({ children, lang, location, changeColor }) => {
   // console.log(`url without /dcamp:${}`);
   // console.log(`langKey:${langKey}`);
 
-  console.log(`isIE:${isIE}`);
+  console.log(`isIE at Layout:${isIE}`);
 
   return (
     <IEContext.Provider value={isIE}>
