@@ -4,6 +4,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import { IEContext } from "./Layout";
 import HeroImage from "../images/hero.png";
 import LogoImage from "../images/logo.png";
+import { navigate } from "gatsby";
 
 const Hero = ({ setHeight }) => {
   const isIE = useContext(IEContext);
@@ -19,6 +20,19 @@ const Hero = ({ setHeight }) => {
       }
     });
   }, [setHeight]);
+
+  useEffect(() => {
+    const gatsbyElement = wrapperRef.current;
+    const gatsbyImageElement = gatsbyElement.getElementsByClassName(
+      "gatsby-image-wrapper"
+    );
+    if (isIE && gatsbyImageElement) {
+      setTimeout(() => {
+        navigate("/");
+        console.log("found Gatsby element so will refresh once...");
+      }, 2000);
+    }
+  }, []);
 
   return (
     <div className={Styles.wrapper} ref={wrapperRef}>
