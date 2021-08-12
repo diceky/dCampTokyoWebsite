@@ -45,16 +45,18 @@ const Layout = ({ children, lang, location, changeColor }) => {
   // console.log(`url without /dcamp:${}`);
   // console.log(`langKey:${langKey}`);
 
+  console.log(`isIE:${isIE}`);
+
   return (
-    <IntlProvider locale={langKey}>
-      <IEContext.Provider value={isIE}>
+    <IEContext.Provider value={isIE}>
+      <IntlProvider locale={langKey}>
         <Container fluid className={Styles.wrapper}>
           <Header lang={langKey} changeColor={changeColor} />
           {children}
           <Footer lang={langKey} />
         </Container>
-      </IEContext.Provider>
-    </IntlProvider>
+      </IntlProvider>
+    </IEContext.Provider>
   );
 };
 
