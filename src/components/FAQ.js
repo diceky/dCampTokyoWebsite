@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import * as Styles from "./FAQ.module.css";
 import SectionTitle from "./SectionTitle";
 import { Row } from "react-bootstrap";
@@ -10,6 +10,10 @@ import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 
 import Reveal from "react-awesome-reveal";
 import { keyframes } from "@emotion/react";
+
+import { IEContext } from "./Layout";
+import blobImage from "../images/blob.png";
+import squaresImage from "../images/squares.png";
 
 const customAnimation = keyframes`
   from {
@@ -70,35 +74,50 @@ const FAQ = ({ lang }) => {
     },
   };
 
+  const isIE = useContext(IEContext);
+
   return (
     <Row className={Styles.wrapper} id="faq">
       <SectionTitle text={lang === "ja" ? "よくある質問" : "FAQ"} />
-      <Reveal
-        keyframes={customAnimation}
-        triggerOnce
-        delay={600}
-        className={Styles.blob}
-      >
-        <StaticImage
-          src="../images/blob.png"
-          alt="orange blob"
-          style={{ position: "absolute" }}
-          objectFit="contain"
-        />
-      </Reveal>
-      <Reveal
-        keyframes={customAnimation}
-        triggerOnce
-        delay={600}
-        className={Styles.square}
-      >
-        <StaticImage
-          src="../images/squares.png"
-          alt="blue square"
-          style={{ position: "absolute" }}
-          objectFit="contain"
-        />
-      </Reveal>
+      {isIE ? (
+        <>
+          <img src={blobImage} alt="orange blob" className={Styles.blob} />
+          <img
+            src={squaresImage}
+            alt="blue squares"
+            className={Styles.square}
+          />
+        </>
+      ) : (
+        <>
+          <Reveal
+            keyframes={customAnimation}
+            triggerOnce
+            delay={600}
+            className={Styles.blob}
+          >
+            <StaticImage
+              src="../images/blob.png"
+              alt="orange blob"
+              style={{ position: "absolute" }}
+              objectFit="contain"
+            />
+          </Reveal>
+          <Reveal
+            keyframes={customAnimation}
+            triggerOnce
+            delay={600}
+            className={Styles.square}
+          >
+            <StaticImage
+              src="../images/squares.png"
+              alt="blue squares"
+              style={{ position: "absolute" }}
+              objectFit="contain"
+            />
+          </Reveal>
+        </>
+      )}
       <Col
         xs={{ span: 10, offset: 1 }}
         sm={{ span: 10, offset: 1 }}

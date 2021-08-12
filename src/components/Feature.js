@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import * as Styles from "./Feature.module.css";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
@@ -13,6 +13,9 @@ import { useWindowDimensions } from "../misc/customHooks";
 
 import Reveal from "react-awesome-reveal";
 import { keyframes } from "@emotion/react";
+
+import { IEContext } from "./Layout";
+import backdropBlueImage from "../images/backdropBlue.png";
 
 const customAnimation = keyframes`
   from {
@@ -36,6 +39,8 @@ const Feature = ({
   image,
   flipped,
 }) => {
+  const isIE = useContext(IEContext);
+
   const { width } = useWindowDimensions();
 
   const Text = ({ children }) => children;
@@ -61,15 +66,23 @@ const Feature = ({
 
   const featureImage = (
     <>
-      <Reveal keyframes={customAnimation} triggerOnce delay={600}>
-        <StaticImage
-          src="../images/backdropBlue.png"
+      {isIE ? (
+        <img
+          src={backdropBlueImage}
           alt="blue backdrop"
           className={Styles.backdrop}
-          style={{ position: "absolute" }}
-          objectFit="cover"
         />
-      </Reveal>
+      ) : (
+        <Reveal keyframes={customAnimation} triggerOnce delay={600}>
+          <StaticImage
+            src="../images/backdropBlue.png"
+            alt="blue backdrop"
+            className={Styles.backdrop}
+            style={{ position: "absolute" }}
+            objectFit="cover"
+          />
+        </Reveal>
+      )}
       <GatsbyImage
         image={image.gatsbyImageData}
         alt={image.description}

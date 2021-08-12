@@ -3,6 +3,7 @@ import * as Styles from "./Hero.module.css";
 import { StaticImage } from "gatsby-plugin-image";
 import { IEContext } from "./Layout";
 import HeroImage from "../images/hero.png";
+import LogoImage from "../images/logo.png";
 
 const Hero = ({ setHeight }) => {
   const isIE = useContext(IEContext);
@@ -23,7 +24,15 @@ const Hero = ({ setHeight }) => {
     <div className={Styles.wrapper} ref={wrapperRef}>
       {isIE ? (
         <>
-          <img src={HeroImage} alt="hero.png" className={Styles.image} />
+          <img src={HeroImage} alt="hero image" className={Styles.image} />
+          <div className={Styles.logoWrapper}>
+            <img
+              src={LogoImage}
+              alt="d.camp Tokyo logo"
+              className={Styles.logo}
+            />
+            <p className={Styles.subtitle}>hosted by IDEO Tokyo</p>
+          </div>
         </>
       ) : (
         <>

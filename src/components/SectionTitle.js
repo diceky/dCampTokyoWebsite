@@ -24,25 +24,26 @@ const SectionTitle = ({ text }) => {
 
   return (
     <div className={Styles.wrapper}>
-      <Reveal keyframes={customAnimation} triggerOnce duration={500}>
-        {isIE ? (
-          <>
-            <img
-              src={SectionTitleImage}
-              alt="section title"
-              className={Styles.image}
-            />
-          </>
-        ) : (
+      {isIE ? (
+        <>
+          <img
+            src={SectionTitleImage}
+            alt="section title"
+            className={Styles.image}
+          />
+          <span className={Styles.text}>{text}</span>
+        </>
+      ) : (
+        <Reveal keyframes={customAnimation} triggerOnce duration={500}>
           <StaticImage
             src="../images/sectionTitle.png"
             alt="section title"
             className={Styles.image}
             objectFit="contain"
           />
-        )}
-        <span className={Styles.text}>{text}</span>
-      </Reveal>
+          <span className={Styles.text}>{text}</span>
+        </Reveal>
+      )}
     </div>
   );
 };
