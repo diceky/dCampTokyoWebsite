@@ -147,7 +147,7 @@ const Header = ({ lang, url, changeColor }) => {
           </Col>
           <a
             href="https://forms.gle/paijHYLXnSu4mSTbA"
-            className={Styles.cta}
+            className={`${Styles.cta} ${width >= 768 ? Styles.showCta : ""}`}
             target="_blank"
             rel="noreferrer"
           >

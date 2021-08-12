@@ -35,10 +35,8 @@ const Layout = ({ children, lang, location, changeColor }) => {
     //reload page once on IE to fix broken DOM issue
     if (isIE)
       setTimeout(() => {
-        const url = location.pathname;
-        const urlWithoutPrefix = url.replace(`/dcamp`, ``);
         console.log("refreshing once...");
-        navigate(urlWithoutPrefix);
+        navigate("/");
       }, 3000);
   }, []);
 
