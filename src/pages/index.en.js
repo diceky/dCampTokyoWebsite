@@ -43,7 +43,7 @@ const Index = ({ location }) => {
 
   return (
     <Layout lang="en" location={location} changeColor={changeHeader}>
-      <SEO title="Top" />
+      <SEO title="d.camp Tokyo hosted by IDEO" />
       <Hero setHeight={handleHeroHeight} />
       <About lang="en" addHighlight={addHighlight} />
       <Details lang="en" handleCPlusPlus={handleCPlusPlus} />
