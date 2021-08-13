@@ -5,15 +5,13 @@ import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import { useStaticQuery, graphql } from "gatsby";
 
-const HowToJoin = ({ lang }) => {
+const HowToJoin = ({ lang, applicationForm }) => {
   const data = useStaticQuery(graphql`
     {
       ja: allContentfulSectionHowToJoin(filter: { node_locale: { eq: "ja" } }) {
         nodes {
           steps {
-            buttonLink
-            buttonText
-            hasButton
+            hasApplyButton
             text
           }
         }
@@ -23,9 +21,7 @@ const HowToJoin = ({ lang }) => {
       ) {
         nodes {
           steps {
-            buttonLink
-            buttonText
-            hasButton
+            hasApplyButton
             text
           }
         }
@@ -48,14 +44,14 @@ const HowToJoin = ({ lang }) => {
               <div className={Styles.item} key={index}>
                 <p className={Styles.index}>{index + 1}</p>
                 <p className={Styles.text}>{item.text}</p>
-                {item.hasButton && (
+                {item.hasApplyButton && (
                   <a
-                    href={item.buttonLink}
+                    href={applicationForm.link}
                     target="_blank"
                     rel="noreferrer"
                     className={Styles.link}
                   >
-                    {item.buttonText}
+                    {applicationForm.text}
                   </a>
                 )}
               </div>
@@ -64,14 +60,14 @@ const HowToJoin = ({ lang }) => {
               <div className={Styles.item} key={index}>
                 <p className={Styles.index}>{index + 1}</p>
                 <p className={Styles.text}>{item.text}</p>
-                {item.hasButton && (
+                {item.hasApplyButton && (
                   <a
-                    href={item.buttonLink}
+                    href={applicationForm.link}
                     target="_blank"
                     rel="noreferrer"
                     className={Styles.link}
                   >
-                    {item.buttonText}
+                    {applicationForm.text}
                   </a>
                 )}
               </div>

@@ -8,7 +8,7 @@ import Menu from "./Menu";
 
 import { useWindowDimensions } from "../misc/customHooks";
 
-const Header = ({ lang, url, changeColor }) => {
+const Header = ({ lang, url, changeColor, applicationForm }) => {
   const { width } = useWindowDimensions();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -99,12 +99,12 @@ const Header = ({ lang, url, changeColor }) => {
               {lang === "ja" ? "よくある質問" : "FAQ"}
             </AnchorLink>
             <a
-              href="https://forms.gle/paijHYLXnSu4mSTbA"
+              href={applicationForm.link}
               className={Styles.button}
               target="_blank"
               rel="noreferrer"
             >
-              {lang === "ja" ? "応募する" : "Apply"}
+              {applicationForm.text}
             </a>
           </Col>
         </>

@@ -11,7 +11,7 @@ import "intl";
 
 export const IEContext = React.createContext("");
 
-const Layout = ({ children, lang, location, changeColor }) => {
+const Layout = ({ children, lang, location, changeColor, applicationForm }) => {
   const data = useStaticQuery(
     graphql`
       query {
@@ -45,7 +45,11 @@ const Layout = ({ children, lang, location, changeColor }) => {
     <IEContext.Provider value={isIE}>
       <IntlProvider locale={langKey}>
         <Container fluid className={Styles.wrapper}>
-          <Header lang={langKey} changeColor={changeColor} />
+          <Header
+            lang={langKey}
+            changeColor={changeColor}
+            applicationForm={applicationForm}
+          />
           {children}
           <Footer lang={langKey} />
         </Container>

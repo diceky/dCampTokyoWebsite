@@ -6,11 +6,23 @@ import Details from "../components/Details";
 import HowToJoin from "../components/HowToJoin";
 import FAQ from "../components/FAQ";
 import SEO from "../components/Seo";
+import { useStaticQuery, graphql } from "gatsby";
 
 const changeHeaderThresh = 30;
 const addHighlightThresh = 800;
 
 const Index = ({ location }) => {
+  const data = useStaticQuery(graphql`
+    {
+      allContentfulApplicationForm(filter: { node_locale: { eq: "en-US" } }) {
+        nodes {
+          text
+          link
+        }
+      }
+    }
+  `);
+
   const [changeHeader, setChangeHeader] = useState(false);
   const [addHighlight, setAddHighLight] = useState(false);
 
@@ -42,12 +54,20 @@ const Index = ({ location }) => {
   const handleCPlusPlus = () => setHighlightFaq(true);
 
   return (
-    <Layout lang="en" location={location} changeColor={changeHeader}>
+    <Layout
+      lang="en"
+      location={location}
+      changeColor={changeHeader}
+      applicationForm={data.allContentfulApplicationForm.nodes[0]}
+    >
       <SEO title="d.camp Tokyo hosted by IDEO" />
       <Hero setHeight={handleHeroHeight} />
       <About lang="en" addHighlight={addHighlight} />
       <Details lang="en" handleCPlusPlus={handleCPlusPlus} />
-      <HowToJoin lang="en" />
+      <HowToJoin
+        lang="en"
+        applicationForm={data.allContentfulApplicationForm.nodes[0]}
+      />
       <FAQ lang="en" highlightFaq={highlightFaq} />
     </Layout>
   );
