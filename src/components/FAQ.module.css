@@ -37,6 +37,11 @@
   line-height: 150%;
   display: inline-block;
   max-width: 50%;
+  transition: background-color 2s ease;
+}
+
+.highlight {
+  background-color: #ff8e00;
 }
 
 .answer {

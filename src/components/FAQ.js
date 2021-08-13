@@ -27,7 +27,7 @@ const customAnimation = keyframes`
   }
 `;
 
-const FAQ = ({ lang }) => {
+const FAQ = ({ lang, highlightFaq }) => {
   const data = useStaticQuery(graphql`
     {
       ja: allContentfulSectionFaq(filter: { node_locale: { eq: "ja" } }) {
@@ -37,6 +37,7 @@ const FAQ = ({ lang }) => {
               raw
             }
             question
+            anchorLinkId
           }
         }
       }
@@ -47,6 +48,7 @@ const FAQ = ({ lang }) => {
               raw
             }
             question
+            anchorLinkId
           }
         }
       }
@@ -126,22 +128,46 @@ const FAQ = ({ lang }) => {
         className={Styles.itemsWrapper}
       >
         {lang === "ja"
-          ? data.ja.nodes[0].faq.map(({ answer, question }, index) => (
-              <div className={Styles.item} key={index}>
-                <p className={Styles.question}>{question}</p>
-                <p className={Styles.answer}>
-                  {renderRichText(answer, options)}
-                </p>
-              </div>
-            ))
-          : data.en.nodes[0].faq.map(({ answer, question }, index) => (
-              <div className={Styles.item} key={index}>
-                <p className={Styles.question}>{question}</p>
-                <p className={Styles.answer}>
-                  {renderRichText(answer, options)}
-                </p>
-              </div>
-            ))}
+          ? data.ja.nodes[0].faq.map(
+              ({ answer, question, anchorLinkId }, index) => (
+                <div
+                  className={Styles.item}
+                  key={index}
+                  id={anchorLinkId ? anchorLinkId : ""}
+                >
+                  <p
+                    className={`${Styles.question} ${
+                      anchorLinkId && highlightFaq ? Styles.highlight : ""
+                    }`}
+                  >
+                    {question}
+                  </p>
+                  <p className={Styles.answer}>
+                    {renderRichText(answer, options)}
+                  </p>
+                </div>
+              )
+            )
+          : data.en.nodes[0].faq.map(
+              ({ answer, question, anchorLinkId }, index) => (
+                <div
+                  className={Styles.item}
+                  key={index}
+                  id={anchorLinkId ? anchorLinkId : ""}
+                >
+                  <p
+                    className={`${Styles.question} ${
+                      anchorLinkId && highlightFaq ? Styles.highlight : ""
+                    }`}
+                  >
+                    {question}
+                  </p>
+                  <p className={Styles.answer}>
+                    {renderRichText(answer, options)}
+                  </p>
+                </div>
+              )
+            )}
       </Col>
     </Row>
   );

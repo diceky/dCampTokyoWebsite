@@ -7,6 +7,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import { useStaticQuery, graphql } from "gatsby";
 import Reveal from "react-awesome-reveal";
 import { keyframes } from "@emotion/react";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 import { IEContext } from "./Layout";
 import backdropOrangeImage from "../images/backdropOrange.png";
@@ -23,7 +24,7 @@ const customAnimation = keyframes`
   }
 `;
 
-const Details = ({ lang }) => {
+const Details = ({ lang, handleCPlusPlus }) => {
   const data = useStaticQuery(graphql`
     {
       ja: allContentfulSectionDetails(filter: { node_locale: { eq: "ja" } }) {
@@ -89,13 +90,43 @@ const Details = ({ lang }) => {
           ? data.ja.nodes[0].details.map(({ title, content }, index) => (
               <div className={Styles.item} key={index}>
                 <p className={Styles.title}>{title}</p>
-                <p className={Styles.content}>{content}</p>
+                {content.includes("C++") ? (
+                  <p className={Styles.content}>
+                    {content.replace("C++", "")}
+                    <span>
+                      <AnchorLink
+                        to={lang === "ja" ? "/ja/#cplusplus" : "/en/#cplusplus"}
+                        className={Styles.anchorlink}
+                        onAnchorLinkClick={handleCPlusPlus}
+                      >
+                        C++
+                      </AnchorLink>
+                    </span>
+                  </p>
+                ) : (
+                  <p className={Styles.content}>{content}</p>
+                )}
               </div>
             ))
           : data.en.nodes[0].details.map(({ title, content }, index) => (
               <div className={Styles.item} key={index}>
                 <p className={Styles.title}>{title}</p>
-                <p className={Styles.content}>{content}</p>
+                {content.includes("C++") ? (
+                  <p className={Styles.content}>
+                    {content.replace("C++", "")}
+                    <span>
+                      <AnchorLink
+                        to={lang === "ja" ? "/ja/#cplusplus" : "/en/#cplusplus"}
+                        className={Styles.anchorlink}
+                        onAnchorLinkClick={handleCPlusPlus}
+                      >
+                        C++
+                      </AnchorLink>
+                    </span>
+                  </p>
+                ) : (
+                  <p className={Styles.content}>{content}</p>
+                )}
               </div>
             ))}
       </Col>

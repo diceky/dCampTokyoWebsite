@@ -28,6 +28,15 @@
   font-weight: 400;
 }
 
+.anchorlink {
+  color: black;
+  text-decoration: underline 2px black;
+}
+
+.anchorlink:hover {
+  color: black;
+}
+
 .woodblock {
   position: absolute;
   bottom: 0;

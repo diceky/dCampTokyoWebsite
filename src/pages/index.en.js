@@ -38,14 +38,17 @@ const Index = ({ location }) => {
   if (heroHeight - windowTop < addHighlightThresh && addHighlight === false)
     setAddHighLight(true);
 
+  const [highlightFaq, setHighlightFaq] = useState(false);
+  const handleCPlusPlus = () => setHighlightFaq(true);
+
   return (
     <Layout lang="en" location={location} changeColor={changeHeader}>
       <SEO title="Top" />
       <Hero setHeight={handleHeroHeight} />
       <About lang="en" addHighlight={addHighlight} />
-      <Details lang="en" />
+      <Details lang="en" handleCPlusPlus={handleCPlusPlus} />
       <HowToJoin lang="en" />
-      <FAQ lang="en" />
+      <FAQ lang="en" highlightFaq={highlightFaq} />
     </Layout>
   );
 };
