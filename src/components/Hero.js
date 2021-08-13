@@ -32,7 +32,7 @@ const Hero = ({ setHeight }) => {
         console.log("found Gatsby element so will refresh once...");
       }, 1000);
     }
-  }, []);
+  }, [isIE]);
 
   return (
     <div className={Styles.wrapper} ref={wrapperRef}>
