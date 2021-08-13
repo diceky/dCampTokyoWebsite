@@ -1,6 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql, navigate, withPrefix } from "gatsby";
 import { getUserLangKey } from "ptz-i18n";
+import SEO from "../components/Seo";
 
 const RedirectIndex = () => {
   const data = useStaticQuery(
@@ -33,7 +34,7 @@ const RedirectIndex = () => {
     navigate(homeUrlWithoutPrefix);
   }
 
-  return <div />;
+  return <SEO title="d.camp Tokyo hosted by IDEO" />;
 };
 
 export default RedirectIndex;
