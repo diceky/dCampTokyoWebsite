@@ -15,7 +15,8 @@
 }
 
 .description {
-  margin-top: 80px;
+  width: 80%;
+  margin: 80px auto 0;
   text-align: center;
   font-size: 18px;
   font-weight: 300;
@@ -101,6 +102,7 @@ Responsive
     font-size: 24px;
   }
   .description {
+    width: 100%;
     font-size: 14px;
     font-weight: 500;
     margin-top: 40px;
