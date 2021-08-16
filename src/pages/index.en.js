@@ -7,9 +7,7 @@ import HowToJoin from "../components/HowToJoin";
 import FAQ from "../components/FAQ";
 import SEO from "../components/Seo";
 import { useStaticQuery, graphql } from "gatsby";
-
-const changeHeaderThresh = 30;
-const addHighlightThresh = 800;
+import { useWindowDimensions } from "../misc/customHooks";
 
 const Index = ({ location }) => {
   const data = useStaticQuery(graphql`
@@ -22,6 +20,11 @@ const Index = ({ location }) => {
       }
     }
   `);
+
+  const { width } = useWindowDimensions();
+
+  const changeHeaderThresh = 30;
+  const addHighlightThresh = width >= 768 ? 800 : 500;
 
   const [changeHeader, setChangeHeader] = useState(false);
   const [addHighlight, setAddHighLight] = useState(false);
