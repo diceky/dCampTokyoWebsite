@@ -3,6 +3,7 @@
   background-image: url("../images/timetable.png");
   background-size: cover;
   padding: 60px 0;
+  position: relative;
 }
 
 .title {
@@ -11,6 +12,7 @@
   background-color: white;
   padding: 14px 20px;
   border: #88e2ff solid 4px;
+  text-align: center;
 }
 
 .timetableWrapper {
@@ -45,6 +47,17 @@
 
 .inlineLink:hover {
   color: black;
+}
+
+.disclaimer {
+  display: inline-block;
+  font-size: 12px;
+  color: #89898a;
+  font-weight: 300;
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  width: auto;
 }
 
 /**************

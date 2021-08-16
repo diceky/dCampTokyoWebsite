@@ -77,6 +77,11 @@ const Timetable = ({ lang, data }) => {
           </>
         )}
       </Col>
+      <p className={Styles.disclaimer}>
+        {lang === "ja"
+          ? "あくまでもプログラムの一例です。"
+          : "pssst... this is just an example timetable."}
+      </p>
     </Row>
   );
 };
