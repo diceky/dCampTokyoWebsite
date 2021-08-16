@@ -339,6 +339,7 @@ const About = ({ lang, addHighlight }) => {
         )}
       </div>
       <Timetable
+        lang={lang}
         data={
           lang === "ja"
             ? data.ja.nodes[0].timetable
