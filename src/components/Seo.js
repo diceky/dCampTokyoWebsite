@@ -33,6 +33,8 @@ const SEO = ({ description, lang, meta, title, image }) => {
   const siteUrl = site.siteMetadata.siteUrl;
   const defaultImage = `${siteUrl}${ogp_image}`;
 
+  console.log(defaultImage);
+
   return (
     <Helmet
       htmlAttributes={{
