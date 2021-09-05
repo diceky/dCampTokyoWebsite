@@ -4,7 +4,7 @@ module.exports = {
     description:
       "Official website for d.camp Tokyo. Welcome to the werid and wonderful world of creativity.",
     author: "Daisuke Yukita",
-    siteUrl: "https://jp.ideo.com/dcamp",
+    siteUrl: "https://goofy-colden-298b2f.netlify.app/dcamp",
     image: `/images/ogp.png`,
     languages: {
       langs: ["en", "ja"],
