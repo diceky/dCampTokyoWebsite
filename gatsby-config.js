@@ -22,6 +22,7 @@ module.exports = {
     "react-dom",
     "gatsby-plugin-react-helmet",
     "react-helmet",
+    "gatsby-plugin-netlify",
     {
       resolve: "gatsby-source-contentful",
       options: {
