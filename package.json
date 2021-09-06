@@ -11,7 +11,7 @@
     "develop": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
-    "build-with-prefix": "gatsby clean && gatsby build --prefix-paths && cd public && mkdir dcamp | mv * dcamp | mv dcamp/_redirects ..",
+    "build-with-prefix": "gatsby clean && gatsby build --prefix-paths && cd public && mkdir dcamp | mv * dcamp && mv dcamp/_redirects ./",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
