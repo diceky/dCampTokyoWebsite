@@ -5,7 +5,6 @@ module.exports = {
       "Official website for d.camp Tokyo. Welcome to the werid and wonderful world of creativity.",
     author: "Daisuke Yukita",
     siteUrl: "https://goofy-colden-298b2f.netlify.app",
-    image: `/images/ogp.png`,
     languages: {
       langs: ["en", "ja"],
       defaultLangKey: "ja",
