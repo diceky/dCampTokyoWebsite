@@ -162,7 +162,14 @@ const About = ({ lang, addHighlight }) => {
             </Reveal>
           )}
         </Col>
-        <Col xs={8} sm={8} md={8} lg={8} style={{ zIndex: 1 }}>
+        <Col
+          xs={8}
+          sm={8}
+          md={8}
+          lg={8}
+          xxl={{ span: 6, offset: 1 }}
+          style={{ zIndex: 1 }}
+        >
           <h1 className={Styles.title}>
             {lang === "ja" ? (
               <>
@@ -227,7 +234,14 @@ const About = ({ lang, addHighlight }) => {
               : renderRichText(data.en.nodes[0].description, options)}
           </p>
         </Col>
-        <Col xs={2} sm={2} md={2} lg={2} style={{ textAlign: "right" }}>
+        <Col
+          xs={2}
+          sm={2}
+          md={2}
+          lg={2}
+          xxl={{ span: 2, offset: 1 }}
+          style={{ textAlign: "right" }}
+        >
           {isIE ? (
             <img
               src={stripeBlueImage}

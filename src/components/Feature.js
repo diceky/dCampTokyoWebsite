@@ -125,6 +125,7 @@ const Feature = ({
         sm={{ span: 5, offset: 1 }}
         md={{ span: 5, offset: 1 }}
         lg={{ span: 5, offset: 1 }}
+        xxl={{ span: 4, offset: 2 }}
         className={Styles.leftWrapper}
       >
         {index % 2 !== 0 && width >= 576 ? featureImage : featureText}
@@ -133,7 +134,8 @@ const Feature = ({
         xs={{ span: 10, offset: 1 }}
         sm={{ span: 5, offset: 0 }}
         md={{ span: 5, offset: 0 }}
-        lg={{ span: 5, offset: 0 }}
+        lg={{ span: 5, offset: 1 }}
+        xxl={{ span: 4, offset: 0 }}
         className={Styles.rightWrapper}
       >
         {index % 2 !== 0 && width >= 576 ? featureText : featureImage}

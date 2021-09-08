@@ -125,6 +125,7 @@ const FAQ = ({ lang, highlightFaq }) => {
         sm={{ span: 10, offset: 1 }}
         md={{ span: 10, offset: 1 }}
         lg={{ span: 10, offset: 1 }}
+        xxl={{ span: 8, offset: 2 }}
         className={Styles.itemsWrapper}
       >
         {lang === "ja"

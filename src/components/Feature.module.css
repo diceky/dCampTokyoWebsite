@@ -6,10 +6,12 @@
 
 .leftWrapper {
   position: relative;
+  padding: 0;
 }
 
 .rightWrapper {
   margin-left: 20px;
+  padding: 0;
   position: relative;
 }
 

@@ -38,6 +38,7 @@ const Timetable = ({ lang, data }) => {
         sm={{ span: 11, offset: 1 }}
         md={{ span: 11, offset: 1 }}
         lg={{ span: 3, offset: 1 }}
+        xxl={{ span: 3, offset: 2 }}
       >
         <p className={Styles.title}>A day at d.camp</p>
       </Col>
@@ -47,6 +48,7 @@ const Timetable = ({ lang, data }) => {
         sm={{ span: 11, offset: 1 }}
         md={{ span: 11, offset: 1 }}
         lg={{ span: 8, offset: 0 }}
+        xxl={{ span: 7, offset: 0 }}
         className={Styles.timetableWrapper}
       >
         {width >= 576 ? (
