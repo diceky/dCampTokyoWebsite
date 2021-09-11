@@ -149,7 +149,7 @@ const Header = ({ lang, url, changeColor, applicationForm }) => {
             </button>
           </Col>
           <a
-            href="https://forms.gle/paijHYLXnSu4mSTbA"
+            href={applicationForm.link}
             className={`${Styles.cta} ${width <= 768 ? Styles.show : ""}`}
             target="_blank"
             rel="noreferrer"
