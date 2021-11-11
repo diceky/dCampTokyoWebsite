@@ -1,16 +1,16 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 export const useWindowDimensions = () => {
-  const getWindowDimensions = () => {
+  const getWindowDimensions = useCallback(() => {
     const { innerWidth: width, innerHeight: height } = window;
     return {
       width,
       height,
     };
-  };
+  }, []);
 
   const [windowDimensions, setWindowDimensions] = useState({
-    width: 0,
+    width: 1000,
     height: 0,
   });
 
