@@ -4,6 +4,7 @@ import Hero from "../components/Hero";
 import About from "../components/About";
 import Details from "../components/Details";
 import HowToJoin from "../components/HowToJoin";
+import Loader from "../components/Loader";
 import FAQ from "../components/FAQ";
 import SEO from "../components/Seo";
 import { useStaticQuery, graphql } from "gatsby";
@@ -26,6 +27,7 @@ const Index = ({ location }) => {
   const changeHeaderThresh = 30;
   const addHighlightThresh = width >= 768 ? 800 : 500;
 
+  const [isReady, setIsReady] = useState(false);
   const [changeHeader, setChangeHeader] = useState(false);
   const [addHighlight, setAddHighLight] = useState(false);
 
@@ -36,6 +38,9 @@ const Index = ({ location }) => {
         setWindowTop(window.pageYOffset);
       };
     }
+    setTimeout(() => {
+      setIsReady(true);
+    }, 2000);
   }, []);
 
   const [heroHeight, setHeroHeight] = useState();
@@ -57,22 +62,25 @@ const Index = ({ location }) => {
   const handleCPlusPlus = () => setHighlightFaq(true);
 
   return (
-    <Layout
-      lang="ja"
-      location={location}
-      changeColor={changeHeader}
-      applicationForm={data.allContentfulApplicationForm.nodes[0]}
-    >
-      <SEO title="d.camp Tokyo hosted by IDEO" />
-      <Hero setHeight={handleHeroHeight} />
-      <About lang="ja" addHighlight={addHighlight} />
-      <Details lang="ja" handleCPlusPlus={handleCPlusPlus} />
-      <HowToJoin
+    <>
+      {isReady ? "" : <Loader />}
+      <Layout
         lang="ja"
+        location={location}
+        changeColor={changeHeader}
         applicationForm={data.allContentfulApplicationForm.nodes[0]}
-      />
-      <FAQ lang="ja" highlightFaq={highlightFaq} />
-    </Layout>
+      >
+        <SEO title="d.camp Tokyo hosted by IDEO" />
+        <Hero setHeight={handleHeroHeight} />
+        <About lang="ja" addHighlight={addHighlight} />
+        <Details lang="ja" handleCPlusPlus={handleCPlusPlus} />
+        <HowToJoin
+          lang="ja"
+          applicationForm={data.allContentfulApplicationForm.nodes[0]}
+        />
+        <FAQ lang="ja" highlightFaq={highlightFaq} />
+      </Layout>
+    </>
   );
 };
 
