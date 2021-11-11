@@ -1,0 +1,146 @@
+.wrapper {
+  padding-bottom: 180px;
+  position: relative;
+}
+
+.testimonialWrapper {
+  border: 10px solid #ff8e00;
+  padding: 0px 100px;
+  display: flex !important;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 200px;
+}
+
+.dots {
+  display: flex !important;
+  justify-content: center;
+
+  margin: 0;
+  padding: 1rem 0;
+
+  list-style-type: none;
+
+  position: absolute;
+  bottom: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.dots li {
+  margin: 0 8px;
+}
+
+.dots li button {
+  display: block;
+  width: 15px;
+  height: 15px;
+  padding: 0;
+
+  border: none;
+  border-radius: 100%;
+  background-color: #edeaee;
+
+  text-indent: -9999px;
+}
+
+.dots :global(li.slick-active) button {
+  background-color: #ff8e00;
+}
+
+.quotation {
+  font-family: "Crimson Pro", serif;
+  font-size: 96px;
+  font-weight: 700;
+}
+
+.alignTop {
+  align-self: flex-start;
+  margin-right: 20px;
+}
+
+.alignBottom {
+  align-self: flex-end;
+  margin-left: 20px;
+}
+
+.testimonial {
+  width: 80%;
+  text-align: center;
+}
+
+.text {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 40px;
+}
+
+.woodCylinder {
+  position: absolute;
+  z-index: 1;
+  bottom: 180px;
+  left: 40px;
+  width: 200px;
+}
+
+/**************
+Responsive
+**************/
+@media screen and (max-width: 576px) {
+  /*　Bootstrap xs */
+  .testimonialWrapper {
+    padding: 0px 5px;
+  }
+  .quotation {
+    font-size: 36px;
+  }
+  .text {
+    font-size: 14px;
+  }
+  .woodCylinder {
+    bottom: 150px;
+    left: 20px;
+    width: 100px;
+  }
+  .dots {
+    bottom: -60px;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  /*　Bootstrap sm 　*/
+  .testimonialWrapper {
+    padding: 0px 10px;
+  }
+  .quotation {
+    font-size: 72px;
+  }
+  .text {
+    font-size: 18px;
+  }
+  .woodCylinder {
+    bottom: 150px;
+    left: 20px;
+    width: 150px;
+  }
+  .dots {
+    bottom: -90px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  /*　Bootstrap md 　*/
+  .testimonialWrapper {
+    padding: 0px 20px;
+  }
+  .quotation {
+    font-size: 72px;
+  }
+  .text {
+    font-size: 18px;
+  }
+  .dots {
+    bottom: -90px;
+  }
+}

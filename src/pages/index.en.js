@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Layout from "../components/Layout";
 import Hero from "../components/Hero";
 import About from "../components/About";
+import Testimonials from "../components/Testimonials";
 import Details from "../components/Details";
 import HowToJoin from "../components/HowToJoin";
 import Loader from "../components/Loader";
@@ -73,6 +74,7 @@ const Index = ({ location }) => {
         <SEO title="d.camp Tokyo hosted by IDEO" />
         <Hero setHeight={handleHeroHeight} />
         <About lang="en" addHighlight={addHighlight} />
+        <Testimonials lang="en" />
         <Details lang="en" handleCPlusPlus={handleCPlusPlus} />
         <HowToJoin
           lang="en"
