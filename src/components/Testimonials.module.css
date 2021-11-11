@@ -5,12 +5,11 @@
 
 .testimonialWrapper {
   border: 10px solid #ff8e00;
-  padding: 0px 100px;
+  padding: 10px 100px;
   display: flex !important;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  min-height: 200px;
 }
 
 .dots {
@@ -90,13 +89,17 @@ Responsive
 @media screen and (max-width: 576px) {
   /*　Bootstrap xs */
   .testimonialWrapper {
-    padding: 0px 5px;
+    padding: 10px 5px;
   }
   .quotation {
     font-size: 36px;
   }
+  .testimonial {
+    width: 70%;
+  }
   .text {
     font-size: 14px;
+    line-height: 20px;
   }
   .woodCylinder {
     bottom: 150px;
@@ -111,13 +114,14 @@ Responsive
 @media screen and (min-width: 576px) and (max-width: 768px) {
   /*　Bootstrap sm 　*/
   .testimonialWrapper {
-    padding: 0px 10px;
+    padding: 10px 10px;
   }
   .quotation {
     font-size: 72px;
   }
   .text {
     font-size: 18px;
+    line-height: 30px;
   }
   .woodCylinder {
     bottom: 150px;
@@ -132,13 +136,14 @@ Responsive
 @media screen and (min-width: 768px) and (max-width: 992px) {
   /*　Bootstrap md 　*/
   .testimonialWrapper {
-    padding: 0px 20px;
+    padding: 10px 20px;
   }
   .quotation {
     font-size: 72px;
   }
   .text {
     font-size: 18px;
+    line-height: 30px;
   }
   .dots {
     bottom: -110px;
