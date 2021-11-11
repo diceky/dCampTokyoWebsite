@@ -154,7 +154,7 @@ const Header = ({ lang, url, changeColor, applicationForm }) => {
             target="_blank"
             rel="noreferrer"
           >
-            {lang === "ja" ? "応募する" : "Apply"}
+            {applicationForm.text}
           </a>
         </>
       )}

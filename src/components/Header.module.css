@@ -1,9 +1,20 @@
 .wrapper {
   position: fixed;
-  top: 30px;
   z-index: 2;
   width: 100vw;
   color: white;
+  animation: popDown 0.8s ease 1.5s 1 normal forwards;
+}
+
+@keyframes popDown {
+  0% {
+    top: -30px;
+    opacity: 0;
+  }
+  100% {
+    top: 30px;
+    opacity: 1;
+  }
 }
 
 .langSelector {
@@ -181,7 +192,6 @@
 }
 
 .cta {
-  opacity: 0;
   text-decoration: none;
   font-size: 18px;
   font-weight: 700;
@@ -197,6 +207,18 @@
   bottom: 25px;
   right: 25px;
   box-shadow: 3px 3px #ad6101;
+  animation: popUp 1s ease 1s 1 normal forwards;
+}
+
+@keyframes popUp {
+  0% {
+    bottom: -100px;
+    opacity: 0;
+  }
+  100% {
+    bottom: 25px;
+    opacity: 1;
+  }
 }
 
 .show {
