@@ -103,6 +103,7 @@ const FAQ = ({ lang, highlightFaq }) => {
               alt="orange blob"
               style={{ position: "absolute" }}
               objectFit="contain"
+              placeholder="blurred"
             />
           </Reveal>
           <Reveal
@@ -116,6 +117,7 @@ const FAQ = ({ lang, highlightFaq }) => {
               alt="blue squares"
               style={{ position: "absolute" }}
               objectFit="contain"
+              placeholder="blurred"
             />
           </Reveal>
         </>

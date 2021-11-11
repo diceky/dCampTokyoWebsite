@@ -141,6 +141,7 @@ const About = ({ lang, addHighlight }) => {
               className={Styles.foamBlue}
               style={{ position: "absolute" }}
               objectFit="contain"
+              placeholder="blurred"
             />
           </Reveal>
         )}
@@ -158,6 +159,7 @@ const About = ({ lang, addHighlight }) => {
                 alt="blue stripe"
                 className={Styles.stripe}
                 objectFit="contain"
+                placeholder="blurred"
               />
             </Reveal>
           )}
@@ -255,6 +257,7 @@ const About = ({ lang, addHighlight }) => {
                 alt="blue stripe"
                 className={Styles.stripeFlipped}
                 objectFit="contain"
+                placeholder="blurred"
               />
             </Reveal>
           )}
@@ -273,6 +276,7 @@ const About = ({ lang, addHighlight }) => {
               className={Styles.foamWhite}
               style={{ position: "absolute" }}
               objectFit="contain"
+              placeholder="blurred"
             />
           </Reveal>
         )}
@@ -292,6 +296,7 @@ const About = ({ lang, addHighlight }) => {
               alt="wiggle"
               style={{ position: "absolute" }}
               objectFit="contain"
+              placeholder="blurred"
             />
           </Reveal>
         )}
@@ -348,6 +353,7 @@ const About = ({ lang, addHighlight }) => {
               alt="orange stripe"
               style={{ position: "absolute" }}
               objectFit="contain"
+              placeholder="blurred"
             />
           </Reveal>
         )}

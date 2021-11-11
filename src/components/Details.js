@@ -76,6 +76,7 @@ const Details = ({ lang, handleCPlusPlus }) => {
               src="../images/backdropOrange.png"
               alt="orange backdrop"
               className={Styles.image}
+              placeholder="blurred"
             />
           </Reveal>
         )}
@@ -141,6 +142,7 @@ const Details = ({ lang, handleCPlusPlus }) => {
           alt="wood block"
           style={{ position: "absolute" }}
           objectFit="contain"
+          placeholder="blurred"
         />
       </Reveal>
     </Row>
