@@ -10,7 +10,7 @@ export const useWindowDimensions = () => {
   }, []);
 
   const [windowDimensions, setWindowDimensions] = useState({
-    width: 1000,
+    width: 0,
     height: 0,
   });
 
