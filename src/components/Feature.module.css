@@ -80,7 +80,7 @@ Responsive
 @media screen and (max-width: 576px) {
   /*　Bootstrap xs */
   .wrapper {
-    margin-top: 40px;
+    margin-top: 60px;
     min-height: 0;
     max-height: none;
   }
@@ -120,6 +120,7 @@ Responsive
 @media screen and (min-width: 576px) and (max-width: 768px) {
   /*　Bootstrap sm 　*/
   .wrapper {
+    margin-top: 140px;
     min-height: 30vh;
     max-height: 30vh;
   }

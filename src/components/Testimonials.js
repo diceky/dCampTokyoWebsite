@@ -70,6 +70,20 @@ const Testimonials = ({ lang }) => {
         md={{ span: 10, offset: 1 }}
         lg={{ span: 8, offset: 2 }}
       >
+        <Reveal
+          keyframes={customAnimation}
+          triggerOnce
+          delay={200}
+          className={Styles.woodCylinder}
+        >
+          <StaticImage
+            src="../images/woodCylinder.jpg"
+            alt="wood cylinder"
+            style={{ position: "absolute" }}
+            objectFit="contain"
+            placeholder="blurred"
+          />
+        </Reveal>
         <div className={Styles.testimonialWrapper}>
           <span className={`${Styles.quotation} ${Styles.alignTop}`}>
             &ldquo;
@@ -91,20 +105,6 @@ const Testimonials = ({ lang }) => {
             &rdquo;
           </span>
         </div>
-        <Reveal
-          keyframes={customAnimation}
-          triggerOnce
-          delay={200}
-          className={Styles.woodCylinder}
-        >
-          <StaticImage
-            src="../images/woodCylinder.jpg"
-            alt="wood cylinder"
-            style={{ position: "absolute" }}
-            objectFit="contain"
-            placeholder="blurred"
-          />
-        </Reveal>
       </Col>
     </Row>
   );
