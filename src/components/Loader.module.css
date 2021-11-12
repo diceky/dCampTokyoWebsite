@@ -13,6 +13,9 @@
   animation: fadeOut 2s ease-in-out forwards;
 }
 
+.imageWrapper {
+}
+
 @keyframes fadeOut {
   0% {
     opacity: 1;
