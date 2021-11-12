@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useRef } from "react";
 import * as Styles from "./Hero.module.css";
 import { StaticImage } from "gatsby-plugin-image";
 import { IEContext } from "./Layout";
-import HeroImage from "../images/hero.png";
+import HeroImage from "../images/hero.jpg";
 import LogoImage from "../images/logo.png";
 import { navigate } from "gatsby";
 
@@ -55,7 +55,7 @@ const Hero = ({ setHeight }) => {
       ) : (
         <>
           <StaticImage
-            src="../images/hero.png"
+            src="../images/hero.jpg"
             alt="hero"
             className={Styles.image}
             style={{ position: "absolute" }}
