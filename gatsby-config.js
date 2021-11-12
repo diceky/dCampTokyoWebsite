@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: "d.camp Tokyo",
     description:
-      "Official website for d.camp Tokyo. Welcome to the werid and wonderful world of creativity.",
+      "Official website for d.camp Tokyo. Welcome to the weird and wonderful world of creativity.",
     author: "Daisuke Yukita",
     siteUrl: "https://goofy-colden-298b2f.netlify.app",
     languages: {
