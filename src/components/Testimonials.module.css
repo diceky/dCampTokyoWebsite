@@ -1,15 +1,16 @@
 .wrapper {
   padding-bottom: 180px;
-  position: relative;
 }
 
 .testimonialWrapper {
   border: 10px solid #ff8e00;
-  padding: 10px 100px;
+  padding: 10px 30px;
   display: flex !important;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  position: relative;
+  min-height: 200px;
 }
 
 .dots {
@@ -50,18 +51,21 @@
 
 .quotation {
   font-family: "Crimson Pro", serif;
-  font-size: 96px;
+  font-size: 120px;
   font-weight: 700;
+  position: absolute;
 }
 
 .alignTop {
   align-self: flex-start;
-  margin-right: 20px;
+  top: -80px;
+  left: -40px;
 }
 
 .alignBottom {
   align-self: flex-end;
-  margin-left: 20px;
+  bottom: -100px;
+  right: -40px;
 }
 
 .testimonial {
@@ -71,7 +75,7 @@
 
 .text {
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 40px;
 }
 
@@ -79,8 +83,18 @@
   position: absolute;
   z-index: 1;
   bottom: 180px;
-  left: 40px;
+  left: 80px;
   width: 200px;
+}
+
+:global(.slick-track) {
+  display: flex !important;
+}
+:global(.slick-track .slick-slide) {
+  display: flex !important;
+  height: auto;
+  align-items: center;
+  justify-content: center;
 }
 
 /**************
@@ -92,14 +106,32 @@ Responsive
     padding: 10px 5px;
   }
   .quotation {
-    font-size: 36px;
+    font-size: 72px;
+  }
+  .alignTop {
+    align-self: flex-start;
+    top: -80px;
+    left: -40px;
+  }
+
+  .alignBottom {
+    align-self: flex-end;
+    bottom: -80px;
+    right: -40px;
   }
   .testimonial {
     width: 70%;
   }
+  .alignTop {
+    top: -60px;
+  }
+
+  .alignBottom {
+    bottom: -60px;
+  }
   .text {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 18px;
+    line-height: 30px;
   }
   .woodCylinder {
     bottom: 150px;
@@ -117,7 +149,10 @@ Responsive
     padding: 10px 10px;
   }
   .quotation {
-    font-size: 72px;
+    font-size: 96px;
+  }
+  .alignTop {
+    top: -60px;
   }
   .text {
     font-size: 18px;
@@ -139,7 +174,10 @@ Responsive
     padding: 10px 20px;
   }
   .quotation {
-    font-size: 72px;
+    font-size: 96px;
+  }
+  .alignTop {
+    top: -60px;
   }
   .text {
     font-size: 18px;

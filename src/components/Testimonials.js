@@ -50,10 +50,11 @@ const Testimonials = ({ lang }) => {
 
   var settings = {
     arrows: false,
-    adaptiveHeight: true,
+    autoplay: true,
+    autoplaySpeed: 8000,
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 1500,
     slidesToShow: 1,
     slidesToScroll: 1,
   };
@@ -90,21 +91,21 @@ const Testimonials = ({ lang }) => {
             &rdquo;
           </span>
         </div>
+        <Reveal
+          keyframes={customAnimation}
+          triggerOnce
+          delay={200}
+          className={Styles.woodCylinder}
+        >
+          <StaticImage
+            src="../images/woodCylinder.jpg"
+            alt="wood cylinder"
+            style={{ position: "absolute" }}
+            objectFit="contain"
+            placeholder="blurred"
+          />
+        </Reveal>
       </Col>
-      <Reveal
-        keyframes={customAnimation}
-        triggerOnce
-        delay={200}
-        className={Styles.woodCylinder}
-      >
-        <StaticImage
-          src="../images/woodCylinder.jpg"
-          alt="wood cylinder"
-          style={{ position: "absolute" }}
-          objectFit="contain"
-          placeholder="blurred"
-        />
-      </Reveal>
     </Row>
   );
 };
