@@ -6,3 +6,4 @@ public
 
 .htaccess
 branding_assets
+.env.*

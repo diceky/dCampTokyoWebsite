@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: "d.camp Tokyo",
@@ -25,7 +29,7 @@ module.exports = {
     {
       resolve: "gatsby-source-contentful",
       options: {
-        accessToken: "0bE8q7Pu1w0Yr9ahipdh3XxvKDpbg3ktCFS-0v3NJHs",
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
         spaceId: "9n0o3q297f2r",
       },
     },
